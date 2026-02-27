@@ -1,0 +1,159 @@
+:root {
+    --color-link: #6B4C2B;
+    --color-text: #333333;
+    --color-white: #FFFFFF;
+    --color-title: #EEC37C;
+    --color-bg-1: #ffedda;
+    --color-bg-2: #A67C52;
+    --font-title: '';
+    --font-text: '';
+}
+
+/****** FOR ALL ******/
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    font-family: var(--font-text);
+}
+body {
+    background-color: var(--color-bg-1);
+}
+h1, h2, h3 {
+    font-family: var(--font-title);
+    margin-bottom: 0;
+    margin-top: 0;
+    line-height: normal;
+}
+h1 {
+    font-weight: 500;
+    text-align: center;
+    font-size: 60px;
+    text-transform: uppercase;
+}
+h2 {
+    text-align: center;
+    font-size: 40px;
+}
+h3 {
+    font-size: 28px;
+    margin-bottom: 16px;
+}
+.section {
+    padding: 30px 20px;
+}
+.content-section {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1230px;
+    width: 100%;
+}
+.section-title {
+    margin-bottom: 30px;
+    text-align: center;
+}
+a {
+    text-decoration: none;
+}
+.d-none {
+    display: none !important;
+}
+
+/****** HEADER ******/
+
+/****** MAIN ******/
+
+/****** FOOTER ******/
+
+
+
+
+
+
+
+
+/* VERSION TABLET VERTICALE 768-1023px*/
+@media (min-width: 768px) {
+    /****** FOR ALL ******/
+    * {
+        font-size: 16px;
+        line-height: 25px;
+    }
+    h1 {
+        font-size: 72px;
+    }
+    h2 {
+        font-size: 50px;
+    }
+    h3 {
+        font-size: 35px;
+        margin-bottom: 25px;
+    }
+    .section {
+        padding: 40px 30px;
+    }
+    .section-title {
+        margin-bottom: 32px;
+        text-align: start;
+    }
+
+    /****** HEADER ******/
+
+    /****** MAIN ******/
+
+    /****** FOOTER ******/
+}
+
+
+
+
+
+/* VERSION TABLET HORIZONTALE 1024-1219px*/
+@media (min-width: 1024px) {
+    /****** FOR ALL ******/
+    * {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    h1 {
+        font-size: 82px;
+    }
+    h2 {
+        font-size: 58px;
+    }
+    h3 {
+        font-size: 42px;
+        margin-bottom: 35px;
+    }
+    .section {
+        padding: 48px 40px;
+    }
+
+    /****** HEADER ******/
+
+    /****** MAIN ******/
+
+    /****** FOOTER ******/
+}
+
+
+
+
+
+
+/* VERSION COMPUTER 1220-infini px*/
+@media (min-width: 1220px) {
+    /****** FOR ALL ******/
+    .section {
+        padding: 52px 46px;
+    }
+
+    /****** HEADER ******/
+
+    /****** MAIN ******/
+
+    /****** FOOTER ******/
+}
