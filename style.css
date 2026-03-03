@@ -1,20 +1,23 @@
 :root {
-    --color-link: #6B4C2B;
-    --color-text: #333333;
+    --color-link: #669bbc;
+    --color-text: #003049;
     --color-white: #FFFFFF;
-    --color-title: #EEC37C;
-    --color-bg-1: #ffedda;
-    --color-bg-2: #A67C52;
-    --font-title: '';
-    --font-text: '';
+    --color-title: #780000;
+    --color-bg-1: #fcf1da;
+    --color-bg-2: #FFFFFF;
+    --color-red: #c1121f;
+    --font-title: 'Fraunces';
+    --font-text: 'Lora';
+    --font-hand: 'Parisienne';
 }
 
 /****** FOR ALL ******/
 * {
     box-sizing: border-box;
+    color: var(--color-text);
     margin: 0px;
     padding: 0px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 20px;
     font-family: var(--font-text);
@@ -23,6 +26,7 @@ body {
     background-color: var(--color-bg-1);
 }
 h1, h2, h3 {
+    color: var(--color-title);
     font-family: var(--font-title);
     margin-bottom: 0;
     margin-top: 0;
@@ -67,6 +71,7 @@ a {
 .first-nav {
     background: rgba(255, 255, 255, 0.5);
     border-bottom: 1px solid var(--color-white);
+    height: 65px;
     padding: 20px;
     position: fixed;
     width: 100%;
@@ -78,24 +83,47 @@ a {
     justify-content: space-between;
 }
 .social-medias.social-medias-header {
-    flex-wrap: nowrap;
-    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 12px;
+    max-width: 100px;
+}
+.social-medias.social-medias-header a i {
+    font-size: 20px;
+}
+.social-medias.social-medias-header a:hover i {
+    cursor: pointer;
+    color: var(--color-link);
+    transform: scale(1.2);
 }
 .btn-menu {
-    color: var(--color-white);
-    font-size: 30px;
+    font-size: 24px;
 }
 .btn-menu:hover {
     color: var(--color-link);
+    cursor: pointer;
+}
+.name-banner a {
+    color: var(--color-title);
+    font-family: var(--font-hand);
+    font-style: italic;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: center;
 }
 
 /* Nav mobile */
 .nav-mobile {
+    background: var(--color-bg-2);
     display: none;
-    position: absolute;
+    height: 100%;
+    position: fixed;
     padding: 20px;
     right: 0;
-    top: 75px;
+    top: 65px;
+    width: 100%;
 }
 .nav-mobile.nav-mobile-active {
     display: inherit;
