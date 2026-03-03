@@ -197,7 +197,7 @@ main {
 @media (min-width: 768px) {
     /****** FOR ALL ******/
     * {
-        font-size: 16px;
+        font-size: 17px;
         line-height: 25px;
     }
     h1 {
@@ -219,6 +219,33 @@ main {
     }
 
     /****** HEADER ******/
+    /* Nav globale */
+    .first-nav {
+        height: 70px;
+        padding: 20px 30px;
+    }
+    .social-medias.social-medias-header a i {
+        font-size: 24px;
+    }
+    .btn-menu, .name-banner a {
+        font-size: 28px;
+    }
+
+    /* Nav mobile */
+    .nav-mobile {
+        height: calc(100% - 70px);
+        padding: 60px 30px;
+        top: 70px;
+    }
+    .nav-mobile .content-section {
+        gap: 35px;
+    }
+    .univers {
+        font-size: 27px;
+    }
+    .nav-mobile ul {
+        gap: 26px;
+    }
 
     /****** MAIN ******/
 
