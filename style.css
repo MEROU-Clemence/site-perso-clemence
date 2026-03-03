@@ -76,6 +76,9 @@ a {
     position: fixed;
     width: 100%;
 }
+.first-nav-active {
+    background: var(--color-bg-1);
+}
 .first-nav .content-section {
     gap: 28px;
     align-items: center;
@@ -118,9 +121,9 @@ a {
 .nav-mobile {
     background: var(--color-bg-2);
     display: none;
-    height: 100%;
+    height: calc(100% - 65px);
     position: fixed;
-    padding: 20px;
+    padding: 50px 20px;
     right: 0;
     top: 65px;
     width: 100%;
@@ -128,32 +131,47 @@ a {
 .nav-mobile.nav-mobile-active {
     display: inherit;
 }
+.nav-mobile .content-section {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.univers {
+    color: var(--color-title);
+    font-family: var(--font-hand);
+    font-size: 24px;
+}
 .nav-mobile ul {
     align-items: center;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 24px;
     list-style: none;
 }
 .nav-mobile ul li {
     cursor: pointer;
-    background: var(--color-bg-1);
-    border: 1px solid var(--color-title);
-    border-radius: 20px;
-    padding: 6px 12px;
     text-align: center;
-    width: 150px;
 }
 .nav-mobile ul li a {
-    color: var(--color-title);
     font-weight: 500;
+    position: relative;
 }
-.nav-mobile ul li:hover {
-    background: var(--color-title);
-    border: 1px solid var(--color-bg-1);
+ .nav-mobile ul li a::after {
+    background-color: var(--color-text);
+    bottom: -4px;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.6s ease;
+    width: 100%;
 }
-.nav-mobile ul li:hover a {
-    color: var(--color-bg-1);
+.nav-mobile ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 /* Nav desktop */
@@ -162,6 +180,9 @@ a {
 }
 
 /****** MAIN ******/
+main {
+    padding-top: 65px;
+}
 
 /****** FOOTER ******/
 

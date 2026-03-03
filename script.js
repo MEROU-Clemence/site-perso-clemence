@@ -5,11 +5,13 @@ document.addEventListener('DOMContentLoaded', function () {
     MobNav.on('click', function () {
         $('.navbar-toggler .btn-menu').toggleClass('d-none');
         $('.nav-mobile').toggleClass('nav-mobile-active');
+        $('.first-nav').toggleClass('first-nav-active');
     });
 
     var ClickMenu = $('.nav-mobile ul li');
     ClickMenu.on('click', function() {
         $('.navbar-toggler .btn-menu').toggleClass('d-none');
         $('.nav-mobile').toggleClass('nav-mobile-active');
+        $('.first-nav').toggleClass('first-nav-active');
     })
 })
