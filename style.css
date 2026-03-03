@@ -70,7 +70,7 @@ a {
 /* Nav globale */
 .first-nav {
     background: rgba(255, 255, 255, 0.5);
-    border-bottom: 1px solid var(--color-white);
+    border-bottom: 2px solid var(--color-white);
     height: 65px;
     padding: 20px;
     position: fixed;
@@ -87,10 +87,9 @@ a {
 }
 .social-medias.social-medias-header {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
     gap: 12px;
-    max-width: 100px;
 }
 .social-medias.social-medias-header a i {
     font-size: 20px;
@@ -153,11 +152,11 @@ a {
     cursor: pointer;
     text-align: center;
 }
-.nav-mobile ul li a {
+.nav-mobile ul li a, .nav-desktop ul li a {
     font-weight: 500;
     position: relative;
 }
- .nav-mobile ul li a::after {
+ .nav-mobile ul li a::after, .nav-desktop ul li a::after {
     background-color: var(--color-text);
     bottom: -4px;
     content: "";
@@ -169,7 +168,7 @@ a {
     transition: transform 0.6s ease;
     width: 100%;
 }
-.nav-mobile ul li a:hover::after {
+.nav-mobile ul li a:hover::after, .nav-desktop ul li a:hover::after {
     transform: scaleX(1);
     transform-origin: left;
 }
@@ -248,6 +247,9 @@ main {
     }
 
     /****** MAIN ******/
+    main {
+        padding-top: 70px;
+    }
 
     /****** FOOTER ******/
 }
@@ -260,7 +262,7 @@ main {
 @media (min-width: 1024px) {
     /****** FOR ALL ******/
     * {
-        font-size: 20px;
+        font-size: 18px;
         line-height: 30px;
     }
     h1 {
@@ -278,6 +280,21 @@ main {
     }
 
     /****** HEADER ******/
+    /* Nav globale */
+    .first-nav {
+        height: 72px;
+        padding: 22px 40px;
+    }
+    .first-nav .content-section {
+        flex-direction: row-reverse;
+    }
+    .name-banner a {
+        font-size: 30px;
+    }
+    .social-medias.social-medias-header {
+        gap: 16px;
+    }
+
     /* Nav mobile */
     .navbar-toggler {
         display: none;
@@ -290,11 +307,17 @@ main {
     .nav-desktop ul {
         display: flex;
         flex-direction: row;
-        gap: 10px;
+        gap: 20px;
         list-style: none;
+    }
+    .nav-desktop ul li {
+        cursor: pointer;
     }
 
     /****** MAIN ******/
+    main {
+        padding-top: 72px;
+    }
 
     /****** FOOTER ******/
 }
@@ -312,8 +335,24 @@ main {
     }
 
     /****** HEADER ******/
+    /* Nav globale */
+    .first-nav {
+        height: 76px;
+        padding: 24px 46px;
+    }
+    .name-banner a {
+        font-size: 32px;
+    }
+
+    /* Nav desk */
+    .nav-desktop ul {
+        gap: 26px;
+    }
 
     /****** MAIN ******/
+    main {
+        padding-top: 76px;
+    }
 
     /****** FOOTER ******/
 }
