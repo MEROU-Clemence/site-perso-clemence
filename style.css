@@ -5,6 +5,7 @@
     --color-title: #780000;
     --color-bg-1: #fcf1da;
     --color-bg-2: #FFFFFF;
+    --color-bg-3: #003049;
     --color-red: #c1121f;
     --font-title: 'Fraunces';
     --font-text: 'Lora';
@@ -186,11 +187,12 @@ main {
 
 /****** FOOTER ******/
 .section-footer {
-    background-color: var(--color-title);
+    background-color: var(--color-bg-3);
+    border-top: 2px solid var(--color-white);
 }
 .title-site,
 .hr-footer,
-.social-medias a i,
+.social-medias.social-medias-footer a i,
 .contact-and-copy div, .contact-and-copy a,
 .cgv-legal-mentions div, .cgv-legal-mentions span {
     color: var(--color-white);
@@ -203,7 +205,7 @@ main {
 }
 .title-site {
     font-family: var(--font-hand);
-    font-size: 32px;
+    font-size: 28px;
     padding-top: 30px;
 }
 .contact-mentions-and-medias {
@@ -212,18 +214,18 @@ main {
     gap: 20px;
     padding-bottom: 30px;
 }
-.social-medias {
+.social-medias.social-medias-footer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
 }
-.social-medias a i {
+.social-medias.social-medias-footer a i {
     font-size: 24px;
 }
-.social-medias a i:hover {
-    color: var(--color-link);
+.social-medias.social-medias-footer a i:hover {
+    color: var(--color-bg-1);
     transform: scale(1.1);
 }
 .contact-and-copy {
@@ -232,7 +234,8 @@ main {
     gap: 4px;
 }
 .contact-and-copy a:hover, .cgv-legal-mentions div:hover {
-    color: var(--color-link);
+    color: var(--color-bg-1);
+    cursor: pointer;
 }
 .cgv-legal-mentions {
     display: flex;
@@ -307,18 +310,18 @@ main {
     }
 
     /****** FOOTER ******/
-    .social-medias, .contact-and-copy, .cgv-legal-mentions {
+    .social-medias.social-medias-footer, .contact-and-copy, .cgv-legal-mentions {
         width: 33%;
     }
     .title-site {
-        font-size: 44px;
+        font-size: 32px;
     }
-    .social-medias {
-        gap: 20px;
+    .social-medias.social-medias-footer {
+        gap: 16px;
         justify-content: start;
     }
-    .social-medias a i {
-        font-size: 32px;
+    .social-medias.social-medias-footer a i {
+        font-size: 26px;
     }
     .contact-mentions-and-medias {
         align-items: center;
@@ -406,11 +409,17 @@ main {
         gap: 40px;
     }
     .title-site {
-        font-size: 48px;
+        font-size: 36px;
         padding-top: 40px;
     }
     .contact-mentions-and-medias {
         padding: 0 40px 40px 40px;
+    }
+    .social-medias.social-medias-header {
+        gap: 20px;
+    }
+    .social-medias.social-medias-footer a i {
+        font-size: 28px;
     }
 }
 
@@ -445,6 +454,4 @@ main {
     main {
         padding-top: 80px;
     }
-
-    /****** FOOTER ******/
 }
