@@ -1,12 +1,15 @@
 :root {
-    --color-link: #669bbc;
+    --color-link: #0099ff;
     --color-text: #003049;
     --color-white: #FFFFFF;
-    --color-title: #780000;
-    --color-bg-1: #fcf1da;
+    --color-dark: #000000;
+    --color-title: #9b111e;
+    --color-bg-1: #fff9f0;
     --color-bg-2: #FFFFFF;
     --color-bg-3: #003049;
-    --color-red: #c1121f;
+    --color-red: #ff1e3c;
+    --color-orange: #ff6f3c;
+    --color-yellow: #ffd93d;
     --font-title: 'Fraunces';
     --font-text: 'Lora';
     --font-hand: 'Parisienne';
@@ -84,6 +87,7 @@ a {
 }
 .first-nav-active {
     background: var(--color-bg-1);
+    border-bottom: 2px solid var(--color-link);
 }
 .first-nav .content-section {
     gap: 28px;
@@ -210,7 +214,7 @@ main {
     justify-content: end;
 }
 .pres-title-dark {
-    -webkit-text-stroke: 3px black;
+    -webkit-text-stroke: 3px var(--color-dark);
 }
 .title-size-moov {
   font-size: clamp(2rem, 7vw, 5rem);
@@ -237,6 +241,9 @@ main {
 .contact-and-copy div, .contact-and-copy a,
 .cgv-legal-mentions div, .cgv-legal-mentions span {
     color: var(--color-white);
+}
+.hr-footer {
+    border-color: var(--color-link);
 }
 .section-footer .content-section {
     display: flex;
@@ -266,7 +273,7 @@ main {
     font-size: 24px;
 }
 .social-medias.social-medias-footer a i:hover {
-    color: var(--color-bg-1);
+    color: var(--color-red);
     transform: scale(1.1);
 }
 .contact-and-copy {
@@ -275,7 +282,7 @@ main {
     gap: 4px;
 }
 .contact-and-copy a:hover, .cgv-legal-mentions div:hover {
-    color: var(--color-bg-1);
+    color: var(--color-red);
     cursor: pointer;
 }
 .cgv-legal-mentions {
