@@ -212,6 +212,9 @@ main {
 .pres-title-dark {
     -webkit-text-stroke: 3px black;
 }
+.title-size-moov {
+  font-size: clamp(2rem, 7vw, 5rem);
+}
 
 
 
