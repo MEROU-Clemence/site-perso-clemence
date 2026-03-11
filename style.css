@@ -142,12 +142,11 @@ a {
     animation: write 2.5s steps(20,end) forwards;
 }
 .feather {
-    /* animation: featherMove 2.5s steps(20,end) forwards; */
     animation:
         featherMove 2.5s steps(20,end) forwards,
         featherFade 1.8s ease forwards;
     animation-delay: 0s, 2.2s;
-    font-size: 22px;
+    font-size: 24px;
     opacity: 0;
     position: absolute;
     top: 30%;
@@ -396,7 +395,7 @@ main {
         line-height: 30px;
     }
     .feather {
-        font-size: 26px;
+        font-size: 28px;
     }
 
     /* Nav mobile */
@@ -509,7 +508,7 @@ main {
         gap: 16px;
     }
     .feather {
-        font-size: 28px;
+        font-size: 30px;
     }
 
     /* Nav mobile */
