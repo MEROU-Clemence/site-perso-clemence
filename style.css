@@ -124,31 +124,58 @@ a {
     justify-content: center;
 }
 .name-banner a {
+    position: relative;
+}
+.signature {
     color: var(--color-title);
-    display:inline-block;
+    display: inline-block;
     font-family: var(--font-hand);
     font-size: 24px;
     font-weight: 600;
-    letter-spacing:0.02em;
+    letter-spacing: 0.02em;
     line-height: 28px;
-    text-align: center;
-    white-space:nowrap;
+    white-space: nowrap;
 }
-.name-banner-home.name-banner a {
+.name-banner-home .signature {
+    overflow:hidden;
+    width:0;
+    animation: write 2.5s steps(20,end) forwards;
+}
+.feather {
+    /* animation: featherMove 2.5s steps(20,end) forwards; */
     animation:
-    write 2.5s steps(20,end) forwards,
-    blink 0.7s step-end infinite;
-    overflow: hidden;
-    width:0; 
+        featherMove 2.5s steps(20,end) forwards,
+        featherFade 1.8s ease forwards;
+    animation-delay: 0s, 2.2s;
+    font-size: 22px;
+    opacity: 0;
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
 }
-@keyframes write{
-  to{
-    width:100%;
+@keyframes write {
+  to {
+    width: 100%;
   }
 }
-@keyframes blink{
-  50%{
-    border-color:transparent;
+@keyframes featherMove {
+  0% {
+    left: 0;
+    opacity: 1;
+    transform:translateY(-50%) rotate(-10deg);
+  }
+  100% {
+    left: calc(100% + 4px);
+    opacity: 1;
+    transform:translateY(-50%) rotate(10deg);
+  }
+}
+@keyframes featherFade {
+  from{
+    opacity:1;
+  }
+  to{
+    opacity:0;
   }
 }
 
@@ -361,11 +388,15 @@ main {
     .social-medias.social-medias-header a i {
         font-size: 24px;
     }
-    .btn-menu, .name-banner a {
+    .btn-menu {
         font-size: 28px;
     }
-    .name-banner a {
+    .signature {
+        font-size: 28px;
         line-height: 30px;
+    }
+    .feather {
+        font-size: 26px;
     }
 
     /* Nav mobile */
@@ -471,11 +502,14 @@ main {
     .first-nav .content-section {
         flex-direction: row-reverse;
     }
-    .name-banner a {
+    .signature {
         font-size: 30px;
     }
     .social-medias.social-medias-header {
         gap: 16px;
+    }
+    .feather {
+        font-size: 28px;
     }
 
     /* Nav mobile */
@@ -549,7 +583,7 @@ main {
         height: 80px;
         padding: 24px 46px;
     }
-    .name-banner a {
+    .signature {
         font-size: 32px;
         line-height: 34px;
     }
