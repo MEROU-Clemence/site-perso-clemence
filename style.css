@@ -77,6 +77,11 @@ a {
 
 /****** HEADER ******/
 /* Nav globale */
+.first-nav, .name-banner {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
 .first-nav {
     backdrop-filter: blur(3px);
     background: rgba(255, 255, 255, 0.5);
@@ -92,7 +97,7 @@ a {
     border-bottom: 2px solid var(--color-link);
 }
 .first-nav .content-section {
-    gap: 28px;
+    gap: 20px;
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -118,12 +123,8 @@ a {
     color: var(--color-link);
     cursor: pointer;
 }
-.name-banner {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
 .name-banner a {
+    height: 28px;
     position: relative;
 }
 .signature {
@@ -181,16 +182,19 @@ a {
 /* Nav mobile */
 .nav-mobile {
     background: var(--color-bg-2);
-    display: none;
-    height: calc(100% - 67px);
-    position: fixed;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
     padding: 50px 20px;
+    position: fixed;
     right: 0;
     top: 67px;
+    transition: height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
     width: 100%;
 }
 .nav-mobile.nav-mobile-active {
-    display: inherit;
+    height: calc(100% - 67px);
+    opacity: 1;
 }
 .nav-mobile .content-section {
     align-items: center;
@@ -390,6 +394,9 @@ main {
     .btn-menu {
         font-size: 28px;
     }
+    .name-banner a {
+        height: 30px;
+    }
     .signature {
         font-size: 28px;
         line-height: 30px;
@@ -581,6 +588,9 @@ main {
     .first-nav {
         height: 80px;
         padding: 24px 46px;
+    }
+    .name-banner a {
+        height: 34px;
     }
     .signature {
         font-size: 32px;
