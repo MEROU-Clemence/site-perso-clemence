@@ -80,37 +80,65 @@ a {
 /* Cursors follow All */
 /* Cursor music */
 .music-note {
-    position: fixed;
-    font-size: 20px;
-    color: var(--color-dark);
-    pointer-events: none;
-    transform: translate(-50%, -50%);
     animation: noteFloat 1s ease-out forwards;
+    color: var(--color-dark);
+    font-size: 20px;
+    pointer-events: none;
+    position: fixed;
+    transform: translate(-50%, -50%);
     z-index: 9999;
 }
 @keyframes noteFloat{
     0% {
         opacity: 1;
-        transform: translate(-50%,-50%) scale(1);
+        transform: translate(-50%, -50%) scale(1);
     }
     100% {
         opacity: 0;
-        transform: translate(-50%,-120%) scale(1.4);
+        transform: translate(-50%, -120%) scale(1.4);
     }
 }
 /* Cursor athlete */
 .run-step {
-  position: absolute;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
+    pointer-events: none;
+    position: absolute;
+    transform: translate(-50%, -50%);
 }
 .run-step svg {
-  width: auto;
-  height: 50px;
-  display: block;
+    display: block;
+    height: 50px;
+    width: auto;
 }
-
-
+/* Cursor engagement */
+.cursor-follow-engagement {
+    height: 30px;
+    left: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    z-index: 9999;
+}
+.cursor-flame svg {
+    display: block;
+    height: 30px;
+    width: 20px;
+}
+.flame-trail {
+    animation: trailFade 0.8s forwards;
+    height: 30px;
+    opacity: 1;
+    pointer-events: none;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    width: 20px;
+}
+@keyframes trailFade {
+    0% { opacity: 1; transform: translate(-50%, -50%) translateY(0px) scaleY(1); }
+    50% { transform: translate(-50%, -50%) translateY(-5px) scaleY(1.05); }
+    100% { opacity: 0; transform: translate(-50%, -50%) translateY(-10px) scaleY(0.95); }
+}
 
 
 

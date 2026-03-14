@@ -9,55 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ****** Curseurs animation
-    function cursorFollow() {
-        const cursor = document.querySelector(".cursor-follow");
-
-        let mouseX = 0;
-        let mouseY = 0;
-        let posX = 0;
-        let posY = 0;
-
-        let started = false;
-        let hideTimer;
-
-        document.addEventListener("mousemove", (e) => {
-
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-
-        if(!started){
-            posX = mouseX;
-            posY = mouseY;
-            started = true;
-        }
-
-        cursor.style.opacity = "1";
-
-        clearTimeout(hideTimer);
-
-        hideTimer = setTimeout(() => {
-            cursor.style.opacity = "0";
-        }, 300);
-
-        });
-
-        function animate(){
-
-        if(started){
-            posX += (mouseX - posX) * 0.1;
-            posY += (mouseY - posY) * 0.1;
-
-            cursor.style.left = posX + "px";
-            cursor.style.top = posY + "px";
-        }
-
-        requestAnimationFrame(animate);
-        }
-
-        animate();
-    }
-
     // ****** Curseur musique
     function cursorMusic() {
         const musicCursor = document.querySelector(".cursor-follow-music");
@@ -175,6 +126,32 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // ****** Curseur engagement
+    function cursorEngage() {
+        const flameSVG = `
+            <svg viewBox="0 0 20 30" xmlns="http://www.w3.org/2000/svg">
+                <path class="flame-orange" d="M10 0 C12 8 18 10 10 30 C2 10 8 8 10 0" fill="var(--color-orange)"/>
+                <path class="flame-yellow" d="M10 0 C11 6 15 8 10 28 C5 8 9 6 10 0" fill="var(--color-yellow)" opacity="0.6"/>
+                <path class="flame-blue" d="M10 20 C11 22 12 23 10 30 C8 23 9 22 10 20" fill="var(--color-link)" opacity="0.3"/>
+            </svg>
+        `;
+
+        document.addEventListener("mousemove", (e) => {
+            const trail = document.createElement("div");
+            trail.classList.add("flame-trail");
+            trail.innerHTML = flameSVG;
+
+            trail.style.left = e.clientX + "px";
+            trail.style.top = e.clientY + "px";
+
+            document.body.appendChild(trail);
+
+            setTimeout(() => {
+                trail.remove();
+            }, 800);
+        });
+    }
+
     // ****** Initialisation des modules autres pages
     if ($('body').hasClass('page-music')) {
         cursorMusic();
@@ -182,8 +159,10 @@ document.addEventListener('DOMContentLoaded', function () {
     if ($('body').hasClass('page-athlete')) {
         cursorAthlete();
     }
+    if ($('body').hasClass('page-engage')) {
+        cursorEngage();
+    }
 
     // ****** Initialisation des modules
     openBurger();
-    cursorFollow();
 })
