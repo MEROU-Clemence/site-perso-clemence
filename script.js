@@ -152,6 +152,143 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // ****** Curseur technologie
+    function cursorTech() {
+        const canvas = document.getElementById("cursor-follow-tech")
+        const ctx = canvas.getContext("2d")
+
+        canvas.width = window.innerWidth
+        canvas.height = window.innerHeight
+
+        // récupérer la couleur CSS
+        const rootStyles = getComputedStyle(document.documentElement)
+        const baseColor = rootStyles.getPropertyValue('--color-link').trim()
+
+        function hexToRgb(hex){
+        hex = hex.replace("#","")
+
+        const bigint = parseInt(hex,16)
+        const r = (bigint >> 16) & 255
+        const g = (bigint >> 8) & 255
+        const b = bigint & 255
+
+        return {r,g,b}
+        }
+
+        const rgb = hexToRgb(baseColor)
+
+        let mouse = {x:0,y:0}
+        let trails = []
+        let lastMoveTime = 0
+
+        window.addEventListener("resize",()=>{
+        canvas.width = window.innerWidth
+        canvas.height = window.innerHeight
+        })
+
+        document.addEventListener("mousemove",(e)=>{
+
+        mouse.x = e.clientX
+        mouse.y = e.clientY
+
+        lastMoveTime = Date.now()
+
+        trails.push({
+        x:mouse.x,
+        y:mouse.y,
+        life:1,
+        vx:(Math.random()-0.5)*30,
+        vy:(Math.random()-0.5)*30
+        })
+
+        if(trails.length>50) trails.shift()
+
+        })
+
+        function draw() {
+            ctx.clearRect(0,0,canvas.width,canvas.height)
+
+            let now = Date.now()
+
+            for(let i=0;i<trails.length-1;i++){
+
+            let p1 = trails[i]
+            let p2 = trails[i+1]
+
+            if(p1.life < 0.02) continue
+
+            // courbure
+            let curveX = (p1.x+p2.x)/2 + p1.vx
+            let curveY = (p1.y+p2.y)/2 + p1.vy
+
+            ctx.beginPath()
+            ctx.moveTo(p1.x,p1.y)
+
+            ctx.quadraticCurveTo(
+            curveX,
+            curveY,
+            p2.x,
+            p2.y
+            )
+
+            let alpha = p1.life
+
+            // glow externe couleur
+            ctx.strokeStyle = `rgba(${rgb.r},${rgb.g},${rgb.b},${alpha})`
+            ctx.lineWidth = 4
+            ctx.shadowBlur = 25
+            ctx.shadowColor = `rgba(${rgb.r},${rgb.g},${rgb.b},1)`
+            ctx.stroke()
+
+            // ligne centrale blanche (effet fibre optique)
+            ctx.strokeStyle = `rgba(255,255,255,${alpha})`
+            ctx.lineWidth = 1.5
+            ctx.shadowBlur = 0
+            ctx.stroke()
+
+            // node lumineux
+            ctx.beginPath()
+            ctx.arc(
+            curveX,
+            curveY,
+            4 + Math.sin(now/200)*2,
+            0,
+            Math.PI*2
+            )
+
+            ctx.fillStyle = `rgba(${Math.min(rgb.r+60,255)},${Math.min(rgb.g+60,255)},255,${alpha})`
+            ctx.shadowBlur = 40
+            ctx.shadowColor = `rgba(${rgb.r},${rgb.g},${rgb.b},1)`
+            ctx.fill()
+
+            // particule qui circule
+            let t = ((now/600)+i*0.1)%1
+
+            let px = p1.x + (p2.x-p1.x)*t
+            let py = p1.y + (p2.y-p1.y)*t
+
+            ctx.beginPath()
+            ctx.arc(px,py,2,0,Math.PI*2)
+
+            ctx.fillStyle = `rgba(${rgb.r},${rgb.g},255,${alpha})`
+            ctx.shadowBlur = 15
+            ctx.fill()
+
+            // fade quand la souris s'arrête
+            if(now - lastMoveTime > 120){
+            p1.life *= 0.92
+            }else{
+            p1.life *= 0.97
+            }
+
+            }
+
+            requestAnimationFrame(draw)
+        }
+
+        draw()
+    }
+
     // ****** Initialisation des modules autres pages
     if ($('body').hasClass('page-music')) {
         cursorMusic();
@@ -161,6 +298,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if ($('body').hasClass('page-engage')) {
         cursorEngage();
+    }
+    if ($('body').hasClass('page-tech')) {
+        cursorTech();
     }
 
     // ****** Initialisation des modules

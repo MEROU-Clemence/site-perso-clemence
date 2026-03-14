@@ -101,7 +101,7 @@ a {
 /* Cursor athlete */
 .run-step {
     pointer-events: none;
-    position: absolute;
+    position: fixed;
     transform: translate(-50%, -50%);
 }
 .run-step svg {
@@ -139,7 +139,16 @@ a {
     50% { transform: translate(-50%, -50%) translateY(-5px) scaleY(1.05); }
     100% { opacity: 0; transform: translate(-50%, -50%) translateY(-10px) scaleY(0.95); }
 }
-
+/* Curseur tech */
+.cursor-follow-tech {
+    height:100vh;
+    left:0;
+    pointer-events:none;
+    position:fixed;
+    top:0;
+    width:100vw;
+    z-index:9999;
+}
 
 
 
