@@ -78,20 +78,6 @@ a {
     background: rgba(255, 255, 255, 0.3);
 }
 /* Cursors follow All */
-.cursor-follow {
-    border-radius: 50%;
-    height: 20px;
-    opacity: 0;
-    pointer-events: none;
-    position: fixed;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.3s ease;
-    width: 20px;
-    z-index: 9999;
-}
-.cursor-follow.cursor-follow-athlete {
-    background: var(--color-red);
-}
 /* Cursor music */
 .music-note {
     position: fixed;
@@ -112,6 +98,22 @@ a {
         transform: translate(-50%,-120%) scale(1.4);
     }
 }
+/* Cursor athlete */
+.run-step {
+  position: absolute;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+.run-step svg {
+  width: auto;
+  height: 50px;
+  display: block;
+}
+
+
+
+
+
 
 /****** HEADER ******/
 /* Nav globale */
