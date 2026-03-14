@@ -77,6 +77,24 @@ a {
 .opacity-3 {
     background: rgba(255, 255, 255, 0.3);
 }
+/* Cursor follow */
+.cursor-follow {
+    border-radius: 50%;
+    height: 20px;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+    width: 20px;
+    z-index: 9999;
+}
+.cursor-follow.cursor-follow-music {
+    background: var(--color-link);
+}
+.cursor-follow.cursor-follow-athlete {
+    background: var(--color-red);
+}
 
 /****** HEADER ******/
 /* Nav globale */
