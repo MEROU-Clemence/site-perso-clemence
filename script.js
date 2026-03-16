@@ -289,6 +289,40 @@ document.addEventListener('DOMContentLoaded', function () {
         draw()
     }
 
+    // ****** Curseur multi
+    function cursorMulti() {
+        const icons = ["🎵","🏃","💻","🔥","⭐"]
+
+        let lastX = 0
+        let lastY = 0
+
+        document.addEventListener("mousemove",(e)=>{
+
+        const dx = e.clientX - lastX
+        const dy = e.clientY - lastY
+        const distance = Math.sqrt(dx*dx + dy*dy)
+
+            if(distance > 35) {
+                const icon = document.createElement("div")
+                icon.classList.add("multi-icon")
+
+                icon.textContent = icons[Math.floor(Math.random()*icons.length)]
+
+                icon.style.left = e.clientX + "px"
+                icon.style.top = e.clientY + "px"
+
+                document.body.appendChild(icon)
+
+                setTimeout(()=>{
+                    icon.remove()
+                },1200)
+
+                lastX = e.clientX
+                lastY = e.clientY
+            }
+        })
+    }
+
     // ****** Initialisation des modules autres pages
     if ($('body').hasClass('page-music')) {
         cursorMusic();
@@ -301,6 +335,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if ($('body').hasClass('page-tech')) {
         cursorTech();
+    }
+    if ($('body').hasClass('page-multi')) {
+        cursorMulti();
     }
 
     // ****** Initialisation des modules

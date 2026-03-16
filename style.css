@@ -149,6 +149,29 @@ a {
     width:100vw;
     z-index:9999;
 }
+/* Cuseur Multi */
+.multi-icon{
+    position:fixed;
+    pointer-events:none;
+    font-size:18px;
+    opacity:1;
+    transform:translate(-50%, -50%);
+    animation: multiFade 1.2s ease-out forwards;
+}
+
+@keyframes multiFade {
+
+    0%{
+    opacity:1;
+    transform:translate(-50%, -50%) scale(1);
+    }
+
+    100%{
+    opacity:0;
+    transform:translate(-50%, -80%) scale(0.6);
+    }
+
+}
 
 
 
