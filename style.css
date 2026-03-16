@@ -211,7 +211,14 @@ a {
         transform: translate(80px, -120px) scale(0.3);
     }
 }
-
+/* Curseur contact */
+#cursor-follow-contact {
+    left: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+}
 
 
 

@@ -390,6 +390,86 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
+    // ****** Curseur contact
+    function cursorContact() {
+        const canvas = document.getElementById("cursor-follow-contact");
+        const ctx = canvas.getContext("2d");
+
+        function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        }
+        window.addEventListener("resize", resizeCanvas);
+        resizeCanvas();
+
+        // couleur de ton CSS
+        const plumeColor = getComputedStyle(document.documentElement)
+                            .getPropertyValue('--color-title').trim();
+
+        let lastPos = null;
+        let mouse = { x: 0, y: 0 };
+
+        document.addEventListener("mousemove", (e) => {
+        lastPos = lastPos || { x: e.clientX, y: e.clientY };
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+        });
+
+        let segments = [];
+
+        function draw() {
+            if(lastPos){
+                const dx = mouse.x - lastPos.x;
+                const dy = mouse.y - lastPos.y;
+                const distance = Math.sqrt(dx*dx + dy*dy);
+                if(distance > 0){
+                segments.push({
+                    x1: lastPos.x,
+                    y1: lastPos.y,
+                    x2: mouse.x,
+                    y2: mouse.y,
+                    alpha: 1
+                });
+
+                lastPos.x += dx * 0.2;
+                lastPos.y += dy * 0.2;
+                }
+            }
+
+            // dessiner tous les segments
+            ctx.clearRect(0,0,canvas.width,canvas.height); // efface seulement le canvas, pas le fond du site
+            segments.forEach((s, i) => {
+                ctx.strokeStyle = `rgba(${hexToRgb(plumeColor)},${s.alpha})`;
+                ctx.lineWidth = 2;
+                ctx.lineCap = "round";
+                ctx.beginPath();
+                ctx.moveTo(s.x1, s.y1);
+                ctx.lineTo(s.x2, s.y2);
+                ctx.stroke();
+
+                // faire disparaître progressivement
+                s.alpha *= 0.92;
+            });
+
+            // enlever les segments presque invisibles
+            segments = segments.filter(s => s.alpha > 0.02);
+
+            requestAnimationFrame(draw);
+        }
+
+        draw();
+
+        // fonction pour convertir hex en rgb
+        function hexToRgb(hex){
+            hex = hex.replace("#","");
+            const bigint = parseInt(hex,16);
+            const r = (bigint >> 16) & 255;
+            const g = (bigint >> 8) & 255;
+            const b = bigint & 255;
+            return `${r},${g},${b}`;
+        }
+    }
+
     // ****** Initialisation des modules autres pages
     if ($('body').hasClass('page-music')) {
         cursorMusic();
@@ -408,6 +488,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if ($('body').hasClass('page-home')) {
         cursorHome();
+    }
+    if ($('body').hasClass('page-contact')) {
+        cursorContact();
     }
 
     // ****** Initialisation des modules
