@@ -470,6 +470,38 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // ****** Modale Formulaire contact
+    function modaleForm() {
+        // Vérifier si un message est présent dans la modale et l'afficher
+        var modalMessage = document.getElementById("modal-message") ? document.getElementById("modal-message").innerText : "";
+        if (modalMessage) {
+            document.getElementById("myModal").style.display = "block"; // Afficher la modale
+        }
+
+        // Fermer la modale en cliquant sur (x)
+        document.querySelector('.close').onclick = function() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        // Fermer la modale en cliquant en dehors de celle-ci
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("myModal")) {
+                document.getElementById("myModal").style.display = "none";
+            }
+        }
+
+        // ****** Fonction de redirection vers la page d'accueil
+        function redirectToHome() {
+            window.location.href = 'contact.html'; // Rediriger vers la page d'accueil
+        }
+
+        // Ajoute l'écouteur de clic pour le bouton de redirection (si ajouté à la modale)
+        const redirectButton = document.getElementById('modal-button');
+        if (redirectButton) {
+            redirectButton.addEventListener('click', redirectToHome);
+        }
+    }
+
     // ****** Initialisation des modules autres pages
     if ($('body').hasClass('page-music')) {
         cursorMusic();
@@ -491,6 +523,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if ($('body').hasClass('page-contact')) {
         cursorContact();
+        modaleForm();
     }
 
     // ****** Initialisation des modules

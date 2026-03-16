@@ -15,7 +15,6 @@
 </head>
 <body class="page-contact">
     <canvas class="cursor-follow cursor-follow-contact" id="cursor-follow-contact"></canvas>
-    <!-- <div class="cursor-follow cursor-follow-contact"></div> -->
 
     <!-- HEADER -->
     <header>
@@ -165,6 +164,15 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modale de notification -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <p id="modal-message"><?php echo htmlspecialchars($modalMessage); ?></p>
+          <button id="modal-button" onclick="redirectToHome()">Retour</button>
+      </div>
+    </div>
     
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
