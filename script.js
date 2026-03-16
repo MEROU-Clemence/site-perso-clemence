@@ -323,6 +323,73 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
+    // ****** Curseur home
+    function cursorHome() {
+        const styles = getComputedStyle(document.documentElement)
+        const colors = [
+            styles.getPropertyValue('--color-link').trim(),
+            styles.getPropertyValue('--color-yellow').trim()
+        ]
+
+        let lastX = 0
+        let lastY = 0
+
+        document.addEventListener("mousemove",(e)=>{
+            const dx = e.clientX - lastX
+            const dy = e.clientY - lastY
+            const distance = Math.sqrt(dx*dx + dy*dy)
+
+            if(distance > 30){
+
+            const star = document.createElement("div")
+            star.classList.add("star")
+
+            const color = colors[Math.floor(Math.random()*colors.length)]
+
+            let size = Math.random()*10 + 6
+
+            // étoiles jaunes plus grosses
+            if(color === styles.getPropertyValue('--color-yellow').trim()){
+            size += 6
+            }
+
+            star.innerHTML = `
+            <svg width="${size}" height="${size}" viewBox="0 0 24 24">
+            <path fill="${color}" d="M12 2 L14.5 9 L22 9 L16 13.5 L18.5 21 L12 16.5 L5.5 21 L8 13.5 L2 9 L9.5 9 Z"/>
+            </svg>
+            `
+
+            star.style.left = e.clientX + "px"
+            star.style.top = e.clientY + "px"
+
+            // ⭐ étoile filante rare
+            if(Math.random() < 0.05){
+
+            star.classList.add("shooting")
+
+            // petit scintillement au départ
+            star.animate([
+            { transform:"translate(-50%, -50%) scale(1.4)", opacity:1 },
+            { transform:"translate(-50%, -50%) scale(1)", opacity:1 }
+            ],{
+            duration:150,
+            easing:"ease-out"
+            })
+            }
+
+            document.body.appendChild(star)
+
+            setTimeout(()=>{
+            star.remove()
+            },1600)
+
+            lastX = e.clientX
+            lastY = e.clientY
+
+            }
+        })
+    }
+
     // ****** Initialisation des modules autres pages
     if ($('body').hasClass('page-music')) {
         cursorMusic();
@@ -338,6 +405,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if ($('body').hasClass('page-multi')) {
         cursorMulti();
+    }
+    if ($('body').hasClass('page-home')) {
+        cursorHome();
     }
 
     // ****** Initialisation des modules
