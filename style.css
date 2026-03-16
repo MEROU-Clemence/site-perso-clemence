@@ -337,7 +337,6 @@ a {
     height: 0;
     opacity: 0;
     overflow: hidden;
-    padding: 50px 20px;
     position: fixed;
     right: 0;
     top: 67px;
@@ -347,6 +346,7 @@ a {
 .nav-mobile.nav-mobile-active {
     height: calc(100% - 67px);
     opacity: 1;
+    padding: 50px 20px;
 }
 .nav-mobile .content-section {
     align-items: center;
@@ -398,10 +398,6 @@ a {
 }
 
 /****** MAIN ******/
-main {
-    padding-top: 67px;
-}
-
 /* Img + title */
 .section-presentation, .section-presentation .opacity-2, .section-presentation .opacity-3 {
     height: 60dvh;
@@ -428,16 +424,6 @@ main {
 .title-size-moov {
   font-size: clamp(2rem, 7vw, 5rem);
 }
-
-
-
-
-
-
-
-
-
-
 
 /****** FOOTER ******/
 .section-footer {
@@ -502,6 +488,63 @@ main {
     justify-content: center;
 }
 
+/****** HOME ******/
+
+
+
+
+
+
+
+
+
+
+/****** CONTACT ******/
+.form-contact {
+    position: relative;
+}
+.form-contact, .form-line.double-line {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.form-contact input, .form-contact textarea {
+    border: 1px solid var(--color-text);
+    border-radius: 12px;
+    padding: 10px;
+    width: 100%;
+}
+.btn-contain {
+    display: flex;
+    justify-content: end;
+    margin-top: 30px;
+}
+.btn-contain .btn {
+    background: var(--color-title);
+    border: 1px solid var(--color-title);
+    border-radius: 10px;
+    color: var(--color-white);
+    cursor: pointer;
+    padding: 10px 20px;
+    width: fit-content;
+}
+.infos-obligatory {
+    bottom: 60px;
+    font-size: 12px;
+    font-style: italic;
+    text-align: end;
+    position: absolute;
+    right: 0;
+}
+.btn-contain .btn:hover, .btn-left .btn:hover {
+    background: var(--color-orange);
+    border: 1px solid var(--color-white);
+    color: var(--color-white);
+}
+
+
+
+
 
 
 
@@ -559,11 +602,11 @@ main {
 
     /* Nav mobile */
     .nav-mobile {
-        padding: 60px 30px;
         top: 73px;
     }
     .nav-mobile.nav-mobile-active {
         height: calc(100% - 73px);
+        padding: 60px 30px;
     }
     .nav-mobile .content-section {
         gap: 35px;
@@ -576,10 +619,6 @@ main {
     }
 
     /****** MAIN ******/
-    main {
-        padding-top: 73px;
-    }
-
     /* Img + title */
     .section-presentation, .section-presentation .opacity-2, .section-presentation .opacity-3 {
         height: 100dvh;
@@ -587,16 +626,6 @@ main {
     .presentation-padding {
         padding: 50px 30px;
     }
-
-
-
-
-
-
-
-
-
-
 
     /****** FOOTER ******/
     .social-medias.social-medias-footer, .contact-and-copy, .cgv-legal-mentions {
@@ -625,6 +654,34 @@ main {
     }
     .cgv-legal-mentions span {
         display: none;
+    }
+
+    /****** HOME ******/
+
+
+
+
+
+
+
+
+
+    /****** CONTACT ******/
+    .form-line.double-line {
+        flex-direction: row;
+    }
+    .form-line.double-line .form-group {
+        width: 50%;
+    }
+    .infos-obligatory {
+        bottom: 70px;
+        font-size: 14px;
+    }
+    .btn-contain {
+        margin-top: 35px;
+    }
+    .btn-contain .btn {
+        padding: 10px 30px;
     }
 }
 
@@ -692,19 +749,10 @@ main {
     }
 
     /****** MAIN ******/
-    main {
-        padding-top: 76px;
-    }
-
     /* Img + title */
     .presentation-padding {
         padding: 50px 40px;
     }
-
-
-
-
-
 
     /****** FOOTER ******/
     .section-footer .content-section {
@@ -722,6 +770,33 @@ main {
     }
     .social-medias.social-medias-footer a i {
         font-size: 28px;
+    }
+
+    /****** HOME ******/
+
+
+
+
+
+
+
+
+
+    /****** CONTACT ******/
+    .form-contact, .form-line.double-line {
+        gap: 20px;
+    }
+    .form-contact input, .form-contact textarea {
+        padding: 10px 20px;
+    }
+    .infos-obligatory {
+        bottom: 80px;
+    }
+    .btn-contain {
+        margin-top: 40px;
+    }
+    .btn-contain .btn {
+        padding: 10px 30px;
     }
 }
 
@@ -757,10 +832,6 @@ main {
     }
 
     /****** MAIN ******/
-    main {
-        padding-top: 80px;
-    }
-
     /* Img + title */
     .presentation-padding {
         padding: 50px 46px;

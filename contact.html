@@ -74,17 +74,60 @@
     </header>
 
     <!-- MAIN -->
-    <section class="section-presentation" style="background-image: url(img/banner-contact.png)" draggable="false">
-        <div class="opacity-3">
-
-            <div class="presentation-padding">
-                <div class="content-section">
-                    <h1 class="title-size-moov">Contact</h1>
+    <main>
+        <section class="section-presentation" style="background-image: url(img/banner-contact.png)" draggable="false">
+            <div class="opacity-3">
+    
+                <div class="presentation-padding">
+                    <div class="content-section">
+                        <h1 class="title-size-moov">Contact</h1>
+                    </div>
                 </div>
+    
             </div>
+        </section>
 
-        </div>
-    </section>
+        <section class="section">
+            <div class="content-section">
+
+                <form class="form-contact" action="email.php" method="POST">
+                    <div class="form-line double-line">
+                        <div class="form-group">
+                            <input id="Email-lastname" name="nom" type="text" placeholder="Nom" class="form-control" data-error="Nom">
+                        </div>
+
+                        <div class="form-group">
+                            <input id="Email-firstname" name="prenom" type="text" placeholder="Prénom *" class="form-control" data-error="Prénom" required>
+                        </div>
+                    </div>
+
+                    <div class="form-line double-line">
+                        <div class="form-group">
+                            <input id="Email-email" name="email" type="email" placeholder="Email *" class="form-control" data-error="Email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input id="Email-phone" name="telephone" type="tel" placeholder="Téléphone" class="form-control" data-error="Téléphone">
+                        </div>
+                    </div>
+
+                    <div class="form-line">
+                        <div class="form-group">
+                            <textarea id="Email-message" name="message" rows="10" class="form-control" placeholder="Message *" data-error="Message" required></textarea>
+                        </div>
+                    </div>
+
+                    <p class="infos-obligatory">* Les champs marqués d’un astérisque sont obligatoires.</p>
+
+                    <div class="btn-contain">
+                      <input type="submit" class="btn" value="Envoyer">
+                    </div>
+
+                </form>
+
+            </div>
+        </section>
+    </main>
 
     <!-- FOOTER -->
     <footer class="section-footer">
