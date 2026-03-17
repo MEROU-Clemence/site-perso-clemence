@@ -89,7 +89,8 @@
         <section class="section">
             <div class="content-section">
 
-                <form class="form-contact" action="email.php" method="POST">
+                <!-- <form class="form-contact" action="email.php" method="POST"> -->
+                <form class="form-contact" id="contact-form">
                     <div class="form-line double-line">
                         <div class="form-group">
                             <input id="Email-lastname" name="nom" type="text" placeholder="Nom" class="form-control" data-error="Nom">
@@ -167,11 +168,11 @@
 
     <!-- Modale de notification -->
     <div id="myModal" class="modal">
-      <div class="modal-content">
-          <span class="close">&times;</span>
-          <p id="modal-message"><?php echo htmlspecialchars($modalMessage); ?></p>
-          <button id="modal-button" onclick="redirectToHome()">Retour</button>
-      </div>
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modal-message"></p>
+            <button id="modal-button">Fermer</button>
+        </div>
     </div>
     
     <script src="script.js"></script>

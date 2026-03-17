@@ -472,33 +472,53 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // ****** Modale Formulaire contact
     function modaleForm() {
-        // Vérifier si un message est présent dans la modale et l'afficher
-        var modalMessage = document.getElementById("modal-message") ? document.getElementById("modal-message").innerText : "";
-        if (modalMessage) {
-            document.getElementById("myModal").style.display = "block"; // Afficher la modale
-        }
+        // ENVOI FORMULAIRE AJAX
+        document.getElementById("contact-form").addEventListener("submit", function(e) {
+            e.preventDefault();
 
-        // Fermer la modale en cliquant sur (x)
+            const formData = new FormData(this);
+
+            fetch("email.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+
+                // injecter le message dans la modale
+                document.getElementById("modal-message").innerText = data;
+
+                // afficher la modale
+                document.getElementById("myModal").style.display = "block";
+
+                // vider les champs si envoyé
+                if (data.includes("bien été envoyé")) {
+                    document.getElementById("contact-form").reset();
+                }
+
+            })
+            .catch(() => {
+                document.getElementById("modal-message").innerText = "Erreur lors de l'envoi.";
+                document.getElementById("myModal").style.display = "block";
+            });
+        });
+
+
+        // FERMETURE MODALE
         document.querySelector('.close').onclick = function() {
             document.getElementById("myModal").style.display = "none";
         }
 
-        // Fermer la modale en cliquant en dehors de celle-ci
+        // bouton retour (optionnel)
+        document.getElementById("modal-button").onclick = function() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        // clic en dehors
         window.onclick = function(event) {
             if (event.target == document.getElementById("myModal")) {
                 document.getElementById("myModal").style.display = "none";
             }
-        }
-
-        // ****** Fonction de redirection vers la page d'accueil
-        function redirectToHome() {
-            window.location.href = 'contact.html'; // Rediriger vers la page d'accueil
-        }
-
-        // Ajoute l'écouteur de clic pour le bouton de redirection (si ajouté à la modale)
-        const redirectButton = document.getElementById('modal-button');
-        if (redirectButton) {
-            redirectButton.addEventListener('click', redirectToHome);
         }
     }
 
