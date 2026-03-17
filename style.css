@@ -46,10 +46,10 @@ h1 {
 }
 h2 {
     text-align: center;
-    font-size: 40px;
+    font-size: 28px;
 }
 h3 {
-    font-size: 28px;
+    font-size: 20px;
     margin-bottom: 16px;
 }
 .section {
@@ -76,6 +76,25 @@ a {
 }
 .opacity-3 {
     background: rgba(255, 255, 255, 0.3);
+}
+.btn-contain {
+    display: flex;
+    justify-content: end;
+    margin-top: 30px;
+}
+.btn-contain .btn {
+    background: var(--color-link);
+    border: 1px solid var(--color-white);
+    border-radius: 10px;
+    color: var(--color-white);
+    cursor: pointer;
+    padding: 10px 20px;
+    width: fit-content;
+}
+.btn-contain .btn:hover {
+    background: var(--color-orange);
+    border: 1px solid var(--color-white);
+    color: var(--color-white);
 }
 /* Cursors follow All */
 /* Cursor music */
@@ -505,6 +524,16 @@ a {
 
 
 /****** CONTACT ******/
+.section.form-and-social-medias .content-section, .section-form, .section-social-medias {
+    display: flex;
+    flex-direction: column;
+}
+.section.form-and-social-medias .content-section {
+    gap: 40px;
+}
+.section-form, .section-social-medias {
+    gap: 25px;
+}
 .form-contact {
     position: relative;
 }
@@ -519,20 +548,6 @@ a {
     padding: 10px;
     width: 100%;
 }
-.btn-contain {
-    display: flex;
-    justify-content: end;
-    margin-top: 30px;
-}
-.btn-contain .btn {
-    background: var(--color-link);
-    border: 1px solid var(--color-white);
-    border-radius: 10px;
-    color: var(--color-white);
-    cursor: pointer;
-    padding: 10px 20px;
-    width: fit-content;
-}
 .infos-obligatory {
     bottom: 60px;
     font-size: 12px;
@@ -541,16 +556,64 @@ a {
     position: absolute;
     right: 0;
 }
-.btn-contain .btn:hover, .btn-left .btn:hover {
-    background: var(--color-orange);
-    border: 1px solid var(--color-white);
-    color: var(--color-white);
-}
 input:focus,
 textarea:focus {
     border: 1px solid var(--color-link);
     box-shadow: 0 0 5px var(--color-link);
     outline: none;
+}
+.social-medias.social-medias-header.social-medias-contact {
+    gap: 14px;
+    justify-content: center;
+}
+.social-medias.social-medias-header.social-medias-contact .icon-contact-wrapper {
+    background-color: var(--color-link);
+    border-radius: 50%;
+    display: inline-block;
+    overflow: hidden;
+    padding: 7px;
+    position: relative;
+    transition: transform 1s ease;
+}
+.social-medias.social-medias-header.social-medias-contact a {
+    display: flex;
+}
+.social-medias.social-medias-header.social-medias-contact a:hover i {
+    transform: scale(1);
+}
+.social-medias.social-medias-header.social-medias-contact .icon-contact-wrapper i {
+    color: var(--color-white);
+    display: block;
+    font-size: 26px;
+    position: relative;
+    z-index: 3;
+}
+.social-medias.social-medias-header.social-medias-contact .icon-contact-wrapper::before {
+    background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.6) 50%,
+        rgba(255,255,255,0) 100%
+    );
+    content: '';
+    height: 200%;
+    left: -75%;
+    pointer-events: none;
+    position: absolute;
+    top: -50%;
+    transform: skewX(-25deg);
+    width: 50%;
+    z-index: 2;
+}
+.social-medias.social-medias-header.social-medias-contact .icon-contact-wrapper:hover {
+    transform: rotate(25deg) scale(1.1);
+}
+.social-medias.social-medias-header.social-medias-contact .icon-contact-wrapper:hover::before {
+    animation: shine 1s ease-in-out forwards;
+}
+@keyframes shine {
+    0% { left: -75%; }
+    100% { left: 125%; }
 }
 /* Modale */
 .modal {
@@ -624,10 +687,10 @@ textarea:focus {
         -webkit-text-stroke: 3px var(--color-white);
     }
     h2 {
-        font-size: 50px;
+        font-size: 35px;
     }
     h3 {
-        font-size: 35px;
+        font-size: 25px;
         margin-bottom: 25px;
     }
     .section {
@@ -636,6 +699,12 @@ textarea:focus {
     .section-title {
         margin-bottom: 32px;
         text-align: start;
+    }
+    .btn-contain {
+        margin-top: 35px;
+    }
+    .btn-contain .btn {
+        padding: 10px 30px;
     }
 
     /****** HEADER ******/
@@ -728,6 +797,18 @@ textarea:focus {
 
 
     /****** CONTACT ******/
+    .section-form, .section-social-medias {
+        gap: 32px;
+    }
+    .social-medias.social-medias-header.social-medias-contact {
+        gap: 16px;
+    }
+    .social-medias.social-medias-header.social-medias-contact .icon-contact-wrapper {
+        padding: 8px;
+    }
+    .social-medias.social-medias-header.social-medias-contact .icon-contact-wrapper i {
+        font-size: 28px;
+    }
     .form-line.double-line {
         flex-direction: row;
     }
@@ -737,12 +818,6 @@ textarea:focus {
     .infos-obligatory {
         bottom: 70px;
         font-size: 14px;
-    }
-    .btn-contain {
-        margin-top: 35px;
-    }
-    .btn-contain .btn {
-        padding: 10px 30px;
     }
     /* Modale */
     .modal-content {
@@ -775,14 +850,20 @@ textarea:focus {
         font-size: 82px;
     }
     h2 {
-        font-size: 58px;
+        font-size: 40px;
     }
     h3 {
-        font-size: 42px;
+        font-size: 30px;
         margin-bottom: 35px;
     }
     .section {
         padding: 48px 40px;
+    }
+    .btn-contain {
+        margin-top: 36px;
+    }
+    .btn-contain .btn {
+        padding: 10px 30px;
     }
 
     /****** HEADER ******/
@@ -858,20 +939,30 @@ textarea:focus {
 
 
     /****** CONTACT ******/
+    .section.form-and-social-medias .content-section {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .section-form {
+        width: 65%;
+    }
+    .section-social-medias {
+        width: 35%;
+    }
+    .section-form, .section-social-medias {
+        gap: 36px;
+    }
     .form-contact, .form-line.double-line {
-        gap: 20px;
+        gap: 16px;
     }
     .form-contact input, .form-contact textarea {
         padding: 10px 20px;
     }
     .infos-obligatory {
-        bottom: 80px;
+        bottom: 76px;
     }
-    .btn-contain {
-        margin-top: 40px;
-    }
-    .btn-contain .btn {
-        padding: 10px 30px;
+    .social-medias.social-medias-header.social-medias-contact .icon-contact-wrapper i {
+        font-size: 30px;
     }
     /* Modale */
     #modal-message {
@@ -892,6 +983,12 @@ textarea:focus {
     /****** FOR ALL ******/
     .section {
         padding: 52px 46px;
+    }
+    h2 {
+        font-size: 42px;
+    }
+    h3 {
+        font-size: 32px;
     }
 
     /****** HEADER ******/
@@ -919,6 +1016,7 @@ textarea:focus {
         padding: 50px 46px;
     }
 
+    /****** HOME ******/
 
 
 

@@ -86,44 +86,83 @@
             </div>
         </section>
 
-        <section class="section">
+        <section class="section form-and-social-medias">
             <div class="content-section">
 
-                <!-- <form class="form-contact" action="email.php" method="POST"> -->
-                <form class="form-contact" id="contact-form">
-                    <div class="form-line double-line">
-                        <div class="form-group">
-                            <input id="Email-lastname" name="nom" type="text" placeholder="Nom" class="form-control" data-error="Nom">
+                <div class="section-form">
+                    <h2>Formulaire de contact</h2>
+    
+                    <form class="form-contact" id="contact-form">
+                        <div class="form-line double-line">
+                            <div class="form-group">
+                                <input id="Email-lastname" name="nom" type="text" placeholder="Nom" class="form-control" data-error="Nom">
+                            </div>
+    
+                            <div class="form-group">
+                                <input id="Email-firstname" name="prenom" type="text" placeholder="Prénom *" class="form-control" data-error="Prénom" required>
+                            </div>
                         </div>
+    
+                        <div class="form-line double-line">
+                            <div class="form-group">
+                                <input id="Email-email" name="email" type="email" placeholder="Email *" class="form-control" data-error="Email" required>
+                            </div>
+    
+                            <div class="form-group">
+                                <input id="Email-phone" name="telephone" type="tel" placeholder="Téléphone" class="form-control" data-error="Téléphone">
+                            </div>
+                        </div>
+    
+                        <div class="form-line">
+                            <div class="form-group">
+                                <textarea id="Email-message" name="message" rows="10" class="form-control" placeholder="Message *" data-error="Message" required></textarea>
+                            </div>
+                        </div>
+    
+                        <p class="infos-obligatory">* Les champs marqués d’un astérisque sont obligatoires.</p>
+    
+                        <div class="btn-contain">
+                          <input type="submit" class="btn" value="Envoyer">
+                        </div>
+    
+                    </form>
+                </div>
 
-                        <div class="form-group">
-                            <input id="Email-firstname" name="prenom" type="text" placeholder="Prénom *" class="form-control" data-error="Prénom" required>
-                        </div>
+                <div class="section-social-medias">
+                    <h2>Restons connectés</h2>
+    
+                    <div class="social-medias social-medias-header social-medias-contact">
+                        <a href="https://api.whatsapp.com/send?phone=%2B33767508704" target="_blank">
+                            <span class="icon-contact-wrapper">
+                                <i class="lab la-whatsapp"></i>
+                            </span>
+                        </a>
+
+                        <a href="https://www.facebook.com/clemence.merou/?locale=fr_FR" target="_blank">
+                            <span class="icon-contact-wrapper">
+                                <i class="lab la-facebook-f"></i>
+                            </span>
+                        </a>
+
+                        <a href="https://www.instagram.com/klem_eroo/" target="_blank">
+                            <span class="icon-contact-wrapper">
+                                <i class="lab la-instagram"></i>
+                            </span>
+                        </a>
+
+                        <a href="https://github.com/MEROU-Clemence" target="_blank">
+                            <span class="icon-contact-wrapper">
+                                <i class="lab la-github"></i>
+                            </span>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/cl%C3%A9mence-m%C3%A9rou-768884279/?originalSubdomain=fr" target="_blank">
+                            <span class="icon-contact-wrapper">
+                                <i class="lab la-linkedin-in"></i>
+                            </span>
+                        </a>
                     </div>
-
-                    <div class="form-line double-line">
-                        <div class="form-group">
-                            <input id="Email-email" name="email" type="email" placeholder="Email *" class="form-control" data-error="Email" required>
-                        </div>
-
-                        <div class="form-group">
-                            <input id="Email-phone" name="telephone" type="tel" placeholder="Téléphone" class="form-control" data-error="Téléphone">
-                        </div>
-                    </div>
-
-                    <div class="form-line">
-                        <div class="form-group">
-                            <textarea id="Email-message" name="message" rows="10" class="form-control" placeholder="Message *" data-error="Message" required></textarea>
-                        </div>
-                    </div>
-
-                    <p class="infos-obligatory">* Les champs marqués d’un astérisque sont obligatoires.</p>
-
-                    <div class="btn-contain">
-                      <input type="submit" class="btn" value="Envoyer">
-                    </div>
-
-                </form>
+                </div>
 
             </div>
         </section>
