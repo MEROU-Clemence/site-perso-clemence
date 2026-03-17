@@ -486,20 +486,28 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(data => {
 
                 // injecter le message dans la modale
-                document.getElementById("modal-message").innerText = data;
+                const modal = document.getElementById("modal-message");
+
+                modal.innerText = data;
+
+                // ajoute la classe succès
+                modal.classList.add("success");
 
                 // afficher la modale
-                document.getElementById("myModal").style.display = "block";
+                document.getElementById("myModal").style.display = "flex";
 
                 // vider les champs si envoyé
                 if (data.includes("bien été envoyé")) {
                     document.getElementById("contact-form").reset();
                 }
-
             })
             .catch(() => {
-                document.getElementById("modal-message").innerText = "Erreur lors de l'envoi.";
-                document.getElementById("myModal").style.display = "block";
+                const modal = document.getElementById("modal-message");
+
+                modal.innerText = "Erreur lors de l'envoi.";
+                modal.classList.remove("success");
+
+                document.getElementById("myModal").style.display = "flex";
             });
         });
 

@@ -47,7 +47,7 @@
 
                 <div class="navbar-toggler">
                     <i class="btn-menu las la-bars"></i>
-                    <i class="btn-menu las la-times d-none"></i>
+                    <i class="btn-menu btn-menu-close las la-times d-none"></i>
                 </div>
     
             </div>
@@ -127,6 +127,19 @@
 
             </div>
         </section>
+
+        <!-- Modale de notification -->
+        <section id="myModal" class="modal section">
+            <div class="modal-content content-section">
+    
+                <span class="close"><i class="btn-form-close las la-times"></i></span>   
+                <p id="modal-message"></p>
+                <div class="btn-contain btn-contain-modal">
+                    <button class="btn" id="modal-button">Fermer</button>
+                </div>
+    
+            </div>
+        </section>
     </main>
 
     <!-- FOOTER -->
@@ -165,16 +178,7 @@
             </div>
         </div>
     </footer>
-
-    <!-- Modale de notification -->
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p id="modal-message"></p>
-            <button id="modal-button">Fermer</button>
-        </div>
-    </div>
-    
+  
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </body>

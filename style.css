@@ -276,6 +276,9 @@ a {
     color: var(--color-link);
     cursor: pointer;
 }
+.btn-menu.btn-menu-close:hover {
+    color: var(--color-orange);
+}
 .name-banner a {
     height: 28px;
     position: relative;
@@ -343,6 +346,7 @@ a {
     top: 67px;
     transition: height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
     width: 100%;
+    z-index: 1000;
 }
 .nav-mobile.nav-mobile-active {
     height: calc(100% - 67px);
@@ -521,8 +525,8 @@ a {
     margin-top: 30px;
 }
 .btn-contain .btn {
-    background: var(--color-title);
-    border: 1px solid var(--color-title);
+    background: var(--color-link);
+    border: 1px solid var(--color-white);
     border-radius: 10px;
     color: var(--color-white);
     cursor: pointer;
@@ -548,67 +552,58 @@ textarea:focus {
     box-shadow: 0 0 5px var(--color-link);
     outline: none;
 }
-/* TODO: cleaner ça style de la modale */
 /* Modale */
 .modal {
+    align-items: center;
     background-color: rgba(0, 0, 0, 0.7);
     display: none;
     height: 100%;
+    justify-content: center;
     left: 0;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 2000;
 }
-
-
-
-
 .modal-content {
-  background-color: var(--color-bg-1);
-  max-width: 600px;
-  width: calc(100% - 40px);
-
-
-  margin: 15% auto; /* 15% d'espace en haut et centré */
-  padding: 20px;
-  border-radius: 20px; /* Coins arrondis */
-  text-align: center; /* Centrer le texte */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajout d'ombre pour un effet 3D */
+    background-color: var(--color-bg-1);
+    border: 1px solid var(--color-link);
+    border-radius: 12px;
+    max-width: 600px;
+    padding: 20px;
+    text-align: center;
 }
-
-.close {
-  color: var(--color-title);
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: var(--color-link); /* Utiliser la couleur de lien */
-  cursor: pointer;
-}
-
 #modal-message {
-  color: var(--color-title); /* Couleur de texte pour le message */
-  font-size: 18px; /* Taille de police du message */
-  margin-bottom: 20px; /* Ajout d'un espacement sous le message */
+    font-size: 18px;
+    margin: 10px 30px 30px 30px;
 }
-
-#modal-button {
-  padding: 10px 20px; /* Ajout de padding pour créer de l'espace autour du texte */
-  background: var(--color-title); /* Couleur de fond du bouton */
-  border: none; /* Supprime la bordure */
-  border-radius: 10px; /* Coins arrondis */
-  color: var(--color-white); /* Couleur du texte */
-  cursor: pointer; /* Change le curseur sur hover */
-  font-size: 16px; /* Taille de police du texte */
+#modal-message.success::after {
+    color: #02a002;
+    content: " ✔";
+    font-size: 24px;
+    margin-left: 5px;
 }
-
+.close {
+  float: right;
+}
+.btn-form-close {
+    font-size: 25px;
+}
+.close:hover .btn-form-close {
+    color: var(--color-orange);
+    cursor: pointer;
+}
+.btn-contain.btn-contain-modal {
+    justify-content: center;
+}
 #modal-button:hover {
-  background: var(--color-link); /* Changement de couleur au survol */
+    background: var(--color-orange);
 }
+
+
+
+
+
 
 
 
@@ -749,6 +744,20 @@ textarea:focus {
     .btn-contain .btn {
         padding: 10px 30px;
     }
+    /* Modale */
+    .modal-content {
+        padding: 20px 20px 30px 20px;
+    }
+    #modal-message {
+        font-size: 20px;
+        margin: 20px 30px 35px 30px;
+    }
+    .btn-form-close {
+        font-size: 28px;
+    }
+    #modal-message.success::after {
+        font-size: 28px;
+    }
 }
 
 
@@ -863,6 +872,13 @@ textarea:focus {
     }
     .btn-contain .btn {
         padding: 10px 30px;
+    }
+    /* Modale */
+    #modal-message {
+        margin: 30px 30px 40px 30px;
+    }
+    #modal-message.success::after {
+        font-size: 30px;
     }
 }
 
