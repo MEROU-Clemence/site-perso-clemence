@@ -50,7 +50,7 @@ h2 {
 }
 h3 {
     color: var(--color-title);
-    font-size: 20px;
+    font-size: 21px;
     margin-bottom: 16px;
 }
 .section {
@@ -63,7 +63,7 @@ h3 {
     width: 100%;
 }
 .title-contain {
-    margin-bottom: 35px;
+    margin-bottom: 40px;
     text-align: center;
 }
 a {
@@ -624,7 +624,7 @@ a {
 .univers-big-contain {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
 }
 .univers-contain {
     border-radius: 10px;
@@ -840,14 +840,14 @@ textarea:focus {
         font-size: 35px;
     }
     h3 {
-        font-size: 25px;
-        margin-bottom: 25px;
+        font-size: 28px;
+        margin-bottom: 20px;
     }
     .section {
         padding: 40px 30px;
     }
     .title-contain {
-        margin-bottom: 32px;
+        margin-bottom: 46px;
         text-align: start;
     }
     .btn-contain {
@@ -976,8 +976,13 @@ textarea:focus {
         line-height: 38px;
     }
 
-
-
+    /* Section univers */
+    .univers-contain {
+        height: 280px;
+    }
+    .univers-content {
+        padding: 25px;
+    }
 
 
 
@@ -1047,10 +1052,12 @@ textarea:focus {
     }
     h3 {
         font-size: 30px;
-        margin-bottom: 35px;
     }
     .section {
         padding: 48px 40px;
+    }
+    .title-contain {
+        margin-bottom: 56px;
     }
     .btn-contain {
         margin-top: 36px;
@@ -1148,6 +1155,18 @@ textarea:focus {
         line-height: 42px;
     }
 
+    /* Section univers */
+    .univers-big-contain {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    .univers-contain {
+        width: 48.3%;
+    }
+
+
+
 
 
 
@@ -1202,6 +1221,9 @@ textarea:focus {
     }
     .section {
         padding: 52px 46px;
+    }
+    .title-contain {
+        margin-bottom: 61px;
     }
     h2 {
         font-size: 42px;
@@ -1258,6 +1280,8 @@ textarea:focus {
         gap: 50px;
     }
 
-
-
+    /* Section univers */
+    .univers-big-contain {
+        gap: 35px;
+    }
 }
