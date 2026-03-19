@@ -117,6 +117,7 @@ a {
         transform: translate(-50%, -120%) scale(1.4);
     }
 }
+
 /* Cursor athlete */
 .run-step {
     pointer-events: none;
@@ -129,6 +130,7 @@ a {
     height: 50px;
     width: auto;
 }
+
 /* Cursor engagement */
 .cursor-follow-engagement {
     height: 30px;
@@ -160,6 +162,7 @@ a {
     50% { transform: translate(-50%, -50%) translateY(-5px) scaleY(1.05); }
     100% { opacity: 0; transform: translate(-50%, -50%) translateY(-10px) scaleY(0.95); }
 }
+
 /* Curseur tech */
 .cursor-follow-tech {
     height: 100vh;
@@ -170,6 +173,7 @@ a {
     width: 100vw;
     z-index: 9999;
 }
+
 /* Cuseur Multi */
 .multi-icon {
     animation: multiFade 1.2s ease-out forwards;
@@ -190,6 +194,7 @@ a {
         transform: translate(-50%, -80%) scale(0.6);
     }
 }
+
 /* Cuseur Home */
 .star {
     animation: starFade 1.6s ease-out forwards;
@@ -234,6 +239,7 @@ a {
         transform: translate(80px, -120px) scale(0.3);
     }
 }
+
 /* Curseur contact */
 #cursor-follow-contact {
     left: 0;
@@ -431,6 +437,9 @@ a {
     height: 60dvh;
     width: 100%;
 }
+.section-presentation.section-presentation-home {
+    background-attachment: fixed !important;
+}
 .section-presentation.section-presentation-home, .section-presentation.section-presentation-home .opacity-3 {
     height: 100dvh;
 }
@@ -572,6 +581,7 @@ a {
     text-align: center;
     transform: translateY(50%);
 }
+
 /* Suite présentation */
 .section.section-pres-txt {
     padding: 100px 20px 30px 20px;
@@ -595,6 +605,7 @@ a {
     border-radius: 50%;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
     max-width: 260px;
+    opacity: 0.95;
     width: 100%;
 }
 
@@ -697,6 +708,7 @@ textarea:focus {
     0% { left: -75%; }
     100% { left: 125%; }
 }
+
 /* Modale */
 .modal {
     align-items: center;
@@ -885,8 +897,10 @@ textarea:focus {
         margin: 0;
         padding: 22px 28px;
     }
+
     /* Suite présentation */
     .section-pres-txt .content-section {
+        align-items: start;
         flex-direction: row;
         gap: 40px;
     }
@@ -929,6 +943,7 @@ textarea:focus {
         bottom: 70px;
         font-size: 14px;
     }
+    
     /* Modale */
     .modal-content {
         padding: 20px 20px 30px 20px;
@@ -1087,6 +1102,7 @@ textarea:focus {
     .social-medias.social-medias-header.social-medias-contact .icon-contact-wrapper i {
         font-size: 30px;
     }
+
     /* Modale */
     #modal-message {
         margin: 30px 30px 40px 30px;
@@ -1159,6 +1175,7 @@ textarea:focus {
     .section.section-pres-txt {
         padding: 120px 20px 30px 20px;
     }
+
     /* Suite présentation */
     .section-pres-txt .content-section {
         gap: 50px;
