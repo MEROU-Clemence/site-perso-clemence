@@ -30,7 +30,6 @@ body {
     background-color: var(--color-bg-1);
 }
 h1, h2, h3 {
-    color: var(--color-title);
     font-family: var(--font-title);
     margin-bottom: 0;
     margin-top: 0;
@@ -45,10 +44,12 @@ h1 {
     -webkit-text-stroke: 2px var(--color-white);
 }
 h2 {
+    color: var(--color-link);
     text-align: center;
     font-size: 28px;
 }
 h3 {
+    color: var(--color-title);
     font-size: 20px;
     margin-bottom: 16px;
 }
@@ -62,7 +63,7 @@ h3 {
     width: 100%;
 }
 .title-contain {
-    margin-bottom: 30px;
+    margin-bottom: 35px;
     text-align: center;
 }
 a {
@@ -96,6 +97,7 @@ a {
     border: 1px solid var(--color-white);
     color: var(--color-white);
 }
+
 /* Cursors follow All */
 /* Cursor music */
 .music-note {
@@ -618,6 +620,50 @@ a {
     text-align: center;
 }
 
+/* Section univers */
+.univers-big-contain {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.univers-contain {
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    display: block;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+.univers-bg {
+    background-position: center;
+    background-size: cover;
+    border-radius: 11px;
+    inset: 0;
+    position: absolute;
+    transition: transform 0.6s ease;
+}
+.univers-contain:hover .univers-bg {
+    transform: scale(1.1);
+}
+.univers-content {
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.9), transparent);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: end;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+.univers-content h3 {
+    text-shadow: 0 2px 6px rgba(255, 255, 255, 0.4);
+}
+.univers-content p {
+    font-weight: 500;
+}
+
+
+
 
 
 
@@ -630,6 +676,9 @@ a {
 }
 .section.form-and-social-medias .content-section {
     gap: 40px;
+}
+.section.form-and-social-medias h2 {
+    color: var(--color-title);
 }
 .section-form, .section-social-medias {
     gap: 25px;
