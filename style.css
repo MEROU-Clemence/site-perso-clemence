@@ -626,6 +626,9 @@ a {
     flex-direction: column;
     gap: 25px;
 }
+.univers-txt {
+    margin-bottom: 30px;
+}
 .univers-contain {
     border-radius: 10px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -1156,6 +1159,9 @@ textarea:focus {
     }
 
     /* Section univers */
+    .univers-txt {
+        margin-bottom: 38px;
+    }
     .univers-big-contain {
         flex-direction: row;
         flex-wrap: wrap;
@@ -1281,6 +1287,9 @@ textarea:focus {
     }
 
     /* Section univers */
+    .univers-txt {
+        margin-bottom: 42px;
+    }
     .univers-big-contain {
         gap: 35px;
     }
