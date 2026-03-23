@@ -626,7 +626,7 @@ a {
     flex-direction: column;
     gap: 25px;
 }
-.univers-txt {
+.txt-intro-section {
     margin-bottom: 30px;
 }
 .univers-contain {
@@ -1159,7 +1159,7 @@ textarea:focus {
     }
 
     /* Section univers */
-    .univers-txt {
+    .txt-intro-section {
         margin-bottom: 38px;
     }
     .univers-big-contain {
@@ -1287,7 +1287,7 @@ textarea:focus {
     }
 
     /* Section univers */
-    .univers-txt {
+    .txt-intro-section {
         margin-bottom: 42px;
     }
     .univers-big-contain {
