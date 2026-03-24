@@ -612,7 +612,7 @@ a {
 }
 
 /* Transition vers univers */
-.intro-univers {
+.citation-transition {
     color: var(--color-dark);
     font-family: var(--font-hand);
     font-size: 24px;
@@ -694,6 +694,68 @@ a {
     font-size: 17px;
 }
 
+/* Section signature */
+.section-end-citation .content-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.btn-icon-and-txt {
+    align-items: center;
+    display: inline-flex;
+    gap: 12px;
+    justify-content: center;
+    text-decoration: none;
+}
+.icon-contact-wrapper {
+    background-color: var(--color-link);
+    border-radius: 50%;
+    display: inline-block;
+    overflow: hidden;
+    padding: 8px;
+    position: relative;
+    transition: transform 0.6s ease;
+}
+.btn-text {
+    color: var(--color-link);
+    font-family: var(--font-title);
+    transition: transform 0.4s ease, color 0.4s ease;
+}
+.icon-contact-wrapper i {
+    color: var(--color-white);
+    display: block;
+    font-size: 24px;
+    position: relative;
+    z-index: 3;
+}
+.icon-contact-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -75%;
+    width: 50%;
+    height: 200%;
+    background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.6) 50%,
+        rgba(255,255,255,0) 100%
+    );
+    transform: skewX(-25deg);
+    pointer-events: none;
+    z-index: 2;
+}
+.btn-icon-and-txt:hover .icon-contact-wrapper {
+    transform: rotate(25deg) scale(1.1);
+}
+.btn-icon-and-txt:hover .icon-contact-wrapper::before {
+    animation: shine 1s ease-in-out forwards;
+}
+.btn-icon-and-txt:hover .btn-text {
+    color: var(--color-link);
+    transform: translateX(5px);
+}
+
 
 
 
@@ -736,6 +798,11 @@ a {
     text-align: end;
     position: absolute;
     right: 0;
+}
+@media (max-width: 357px) {
+    .infos-obligatory {
+        bottom: 50px;
+    }
 }
 input:focus,
 textarea:focus {
@@ -1003,7 +1070,7 @@ textarea:focus {
     }
 
     /* Transition vers univers */
-    .intro-univers {
+    .citation-transition {
         font-size: 28px;
         line-height: 38px;
     }
@@ -1029,6 +1096,18 @@ textarea:focus {
     .multi-card-big-section .univers-content p {
         font-size: 19px;
     }
+
+    /* Section signature */
+    .section-end-citation .content-section {
+        gap: 15px;
+    }
+    .icon-contact-wrapper i {
+        font-size: 28px;
+    }
+    .btn-icon-and-txt {
+        gap: 14px;
+    }
+
 
 
 
@@ -1191,7 +1270,7 @@ textarea:focus {
     }
 
     /* Transition vers univers */
-    .intro-univers {
+    .citation-transition {
         font-size: 32px;
         line-height: 42px;
     }
@@ -1231,7 +1310,17 @@ textarea:focus {
         font-size: 20px;
     }
 
-
+    /* Section signature */
+    .section-end-citation .content-section {
+        gap: 20px;
+    }
+    .icon-contact-wrapper i {
+        font-size: 30px;
+    }
+    .btn-icon-and-txt {
+        gap: 16px;
+    }
+   
 
 
 
