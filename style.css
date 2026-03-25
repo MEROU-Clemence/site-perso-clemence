@@ -756,6 +756,34 @@ a {
     transform: translateX(5px);
 }
 
+/****** MUSIQUE ******/
+/* Intro musique */
+.section-intro-musique .content-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.citation-transition.citation-transition-2 {
+    font-family: var(--font-title);
+    font-size: 22px;
+}
+
+/* Section prestations */
+.section-prestations .prestations {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+}
+.section-prestations .prestations li {
+    align-items: center;
+    display: flex;
+    gap: 5px;
+}
+.prestations li svg {
+    min-width: 20px;
+    width: 20px;
+}
 
 
 
@@ -1108,6 +1136,23 @@ textarea:focus {
         gap: 14px;
     }
 
+    /****** MUSIQUE ******/
+    /* Intro musique */
+    .section-intro-musique .content-section {
+        gap: 45px;
+    }
+    .citation-transition.citation-transition-2 {
+        font-size: 24px;
+    }
+
+    /* Section prestations */
+    .section-prestations .prestations {
+        gap: 15px;
+    }
+
+
+
+
 
 
 
@@ -1321,12 +1366,27 @@ textarea:focus {
         gap: 16px;
     }
    
+    /****** MUSIQUE ******/
+    /* Intro musique */
+    .section-intro-musique .content-section {
+        gap: 55px;
+    }
+    .citation-transition.citation-transition-2 {
+        font-size: 26px;
+    }
+    /* Section prestations */
+    .section-prestations .prestations {
+        gap: 18px;
+    }
+    .section-prestations .prestations li {
+        gap: 7px;
+    }
 
 
 
 
 
-
+    
 
 
     /****** CONTACT ******/
