@@ -785,6 +785,22 @@ a {
     width: 20px;
 }
 
+/* Section extrais */
+.section-extraits .videos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+}
+.section-extraits .videos iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+}
+
+
+
+
 
 
 
@@ -1150,6 +1166,17 @@ textarea:focus {
         gap: 15px;
     }
 
+    /* Section extrais */
+    .section-extraits .videos {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .section-extraits .videos iframe {
+        width: 48.1%;
+    }
+
+
+
 
 
 
@@ -1382,11 +1409,20 @@ textarea:focus {
         gap: 7px;
     }
 
+    /* Section extrais */
+    .section-extraits .videos {
+        gap: 30px;
+    }
+    .section-extraits .videos iframe {
+        width: 48.3%;
+    }
 
 
 
 
-    
+
+
+
 
 
     /****** CONTACT ******/
@@ -1520,5 +1556,14 @@ textarea:focus {
     }
     .multi-card-big-section .univers-content p {
         font-size: 21px;
+    }
+
+    /****** MUSIQUE ******/
+    /* Section extrais */
+    .section-extraits .videos {
+        gap: 35px;
+    }
+    .section-extraits .videos iframe {
+        width: 48.4%;
     }
 }
