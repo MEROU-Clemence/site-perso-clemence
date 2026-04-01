@@ -793,12 +793,14 @@ a {
 }
 
 /* Section extraits */
+.section-athlete-visual .videos,
 .section-extraits .videos {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 25px;
 }
+.section-athlete-visual .videos iframe,
 .section-extraits .videos iframe {
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -1011,8 +1013,15 @@ a {
     color: var(--color-red);
 }
 
-
-
+/****** ATHLETE ******/
+/* Disciplines */
+.section-disciplines h3 {
+    color: var(--color-title);
+}
+.section-disciplines .card-header img {
+    border-radius: 50%;
+    width: 32px;
+}
 
 
 
@@ -1458,6 +1467,11 @@ textarea:focus {
         padding: 4px 12px;
     }
 
+    /****** ATHLETE ******/
+    /* Disciplines */
+    .section-disciplines .card-header img {
+        width: 36px;
+    }
 
 
 
@@ -1774,6 +1788,11 @@ textarea:focus {
         font-size: 14px;
     }
 
+    /****** ATHLETE ******/
+    /* Disciplines */
+    .section-disciplines .card-header img {
+        width: 40px;
+    }
 
 
 
