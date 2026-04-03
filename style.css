@@ -898,9 +898,13 @@ a {
     color: var(--color-link);
     font-size: 18px;
 }
-.card-presta p {
+.card-presta p, .card-presta p strong {
     font-size: 14px;
     line-height: 20px;
+}
+.card-presta p strong {
+    font-weight: 600;
+    text-decoration: underline;
 }
 .card-header {
     display: flex;
@@ -1023,9 +1027,19 @@ a {
     width: 32px;
 }
 
-
-
-
+/* Visuels */
+.section-athlete-visual .content-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.section-athlete-visual .cards-prestations img {
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
 
 
 
@@ -1473,6 +1487,10 @@ textarea:focus {
         width: 36px;
     }
 
+    /* Visuels */
+    .section-athlete-visual .content-section {
+        gap: 45px;
+    }
 
 
 
@@ -1794,7 +1812,10 @@ textarea:focus {
         width: 40px;
     }
 
-
+    /* Visuels */
+    .section-athlete-visual .content-section {
+        gap: 55px;
+    }
 
 
 
