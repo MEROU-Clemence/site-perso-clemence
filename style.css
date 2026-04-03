@@ -501,7 +501,7 @@ a {
 .hr-footer,
 .social-medias.social-medias-footer a i,
 .contact-and-copy div, .contact-and-copy a,
-.cgv-legal-mentions a, .cgv-legal-mentions span {
+.legal-mentions-and-co a, .legal-mentions-and-co span {
     color: var(--color-white);
 }
 .hr-footer {
@@ -544,15 +544,17 @@ a {
     flex-direction: column;
     gap: 4px;
 }
-.contact-and-copy a:hover, .cgv-legal-mentions a:hover {
+.contact-and-copy a:hover, .legal-mentions-and-co a:hover {
     color: var(--color-red);
     cursor: pointer;
 }
-.cgv-legal-mentions {
+.legal-mentions-and-co {
+    column-gap: 12px;
     display: flex;
     flex-direction: row;
-    gap: 12px;
+    flex-wrap: wrap;
     justify-content: center;
+    row-gap: 3px;
 }
 
 /****** HOME ******/
@@ -1301,7 +1303,7 @@ textarea:focus {
     }
 
     /****** FOOTER ******/
-    .social-medias.social-medias-footer, .contact-and-copy, .cgv-legal-mentions {
+    .social-medias.social-medias-footer, .contact-and-copy, .legal-mentions-and-co {
         width: 33%;
     }
     .title-site {
@@ -1320,12 +1322,12 @@ textarea:focus {
         justify-content: space-between;
         padding: 0 30px 30px 30px;
     }
-    .cgv-legal-mentions {
+    .legal-mentions-and-co {
         flex-direction: column;
         gap: 4px;
         text-align: end;
     }
-    .cgv-legal-mentions span {
+    .legal-mentions-and-co span {
         display: none;
     }
 
