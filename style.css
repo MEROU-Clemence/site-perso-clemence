@@ -1213,7 +1213,15 @@ textarea:focus {
     background: var(--color-orange);
 }
 
-
+/****** MENTIONS LEGALES & POLITIQUE DE CONFIDENTIALITE ******/
+.section-infos-mentions-and-co .content-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.paragraph-infos-mentions-and-co {
+    line-height: 21px;
+}
 
 
 
@@ -1561,6 +1569,11 @@ textarea:focus {
     #modal-message.success::after {
         font-size: 28px;
     }
+
+    /****** MENTIONS LEGALES & POLITIQUE DE CONFIDENTIALITE ******/
+    .paragraph-infos-mentions-and-co {
+        line-height: 22px;
+    }
 }
 
 
@@ -1880,6 +1893,14 @@ textarea:focus {
     }
     #modal-message.success::after {
         font-size: 30px;
+    }
+
+    /****** MENTIONS LEGALES & POLITIQUE DE CONFIDENTIALITE ******/
+    .section-infos-mentions-and-co .content-section {
+        gap: 50px;
+    }
+    .paragraph-infos-mentions-and-co {
+        line-height: 24px;
     }
 }
 
