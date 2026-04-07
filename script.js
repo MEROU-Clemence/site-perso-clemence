@@ -530,6 +530,44 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // ****** Pop up Cookies
+    function popUpCookies() {
+        const banner = document.getElementById("cookie-banner");
+
+        // Vérifie si choix déjà fait
+        if (localStorage.getItem("cookiesChoice")) {
+            banner.style.display = "none";
+        }
+
+        document.getElementById("accept-cookies").addEventListener("click", function () {
+            localStorage.setItem("cookiesChoice", "accepted");
+            banner.style.display = "none";
+
+            // 👉 Ici tu peux activer Google Analytics
+            console.log("Cookies acceptés");
+            // TODO: faire ça ici
+            // if (localStorage.getItem("cookiesChoice") === "accepted") {
+            //     // 👉 charger Google Analytics
+            // }
+        });
+
+        document.getElementById("refuse-cookies").addEventListener("click", function () {
+            localStorage.setItem("cookiesChoice", "refused");
+            banner.style.display = "none";
+
+            console.log("Cookies refusés");
+        });
+
+        // Reste sur la page quand on click sur Gérer les cookies
+        document.getElementById("manage-cookies").addEventListener("click", function(e) {
+            e.preventDefault();
+
+            localStorage.removeItem("cookiesChoice");
+
+            document.getElementById("cookie-banner").style.display = "block";
+        });
+    }
+
     // ****** Initialisation des modules autres pages
     if ($('body').hasClass('page-music')) {
         cursorMusic();
@@ -556,4 +594,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // ****** Initialisation des modules
     openBurger();
+    popUpCookies();
 })

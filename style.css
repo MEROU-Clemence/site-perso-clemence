@@ -263,7 +263,68 @@ a {
     -webkit-text-stroke: inherit;
 }
 
-
+/* Pop up Cookies */
+.cookie-banner {
+    animation: fadeInUp 1s ease forwards;
+    background: var(--color-link);
+    border-radius: 12px;
+    bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin-left: 20px;
+    max-width: 320px;
+    opacity: 0;
+    padding: 20px;
+    position: fixed;
+    right: 20px;
+    transform: translateY(25px);
+    z-index: 9999;
+}
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.cookie-banner p, .cookie-banner a {
+    font-size: 14px;
+    line-height: 22px;
+}
+.cookie-banner p {
+    margin-bottom: 10px;
+}
+.cookie-banner a {
+    color: var(--color-white);
+    text-decoration: underline;
+}
+.cookie-banner a:hover {
+    color: var(--color-yellow);
+}
+.cookie-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.cookie-buttons button {
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    padding: 4px 12px;
+}
+#accept-cookies {
+    background: var(--color-white);
+}
+#accept-cookies:hover {
+    background: var(--color-yellow);
+}
+#refuse-cookies {
+    background: transparent;
+    border: 1px solid var(--color-white);
+    color: var(--color-white);
+}
+#refuse-cookies:hover {
+    background: var(--color-red);
+}
 
 
 
@@ -515,8 +576,14 @@ a {
 .hr-footer,
 .social-medias.social-medias-footer a i,
 .contact-and-copy div, .contact-and-copy a,
-.legal-mentions-and-co a, .legal-mentions-and-co span {
+.legal-mentions-and-co a, .legal-mentions-and-co button, .legal-mentions-and-co span {
     color: var(--color-white);
+}
+.legal-mentions-and-co button {
+    background-color: inherit;
+    border: none;
+    display: contents;
+    width: fit-content;
 }
 .hr-footer {
     border-color: var(--color-link);
@@ -558,7 +625,7 @@ a {
     flex-direction: column;
     gap: 4px;
 }
-.contact-and-copy a:hover, .legal-mentions-and-co a:hover {
+.contact-and-copy a:hover, .legal-mentions-and-co a:hover, .legal-mentions-and-co button:hover {
     color: var(--color-red);
     cursor: pointer;
 }
@@ -1635,6 +1702,25 @@ textarea:focus {
     }
     .btn-contain .btn {
         padding: 10px 30px;
+    }
+
+    /* Pop up Cookies */
+    .cookie-banner {
+        max-width: 330px;
+        padding: 22px;
+    }
+    .cookie-banner p, .cookie-banner a {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .cookie-banner p {
+        margin-bottom: 15px;
+    }
+    .cookie-buttons {
+        gap: 15px;
+    }
+    .cookie-buttons button {
+        font-size: 14px;
     }
 
     /****** HEADER ******/
