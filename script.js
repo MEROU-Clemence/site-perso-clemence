@@ -11,40 +11,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // ****** Curseur musique
     function cursorMusic() {
-        const musicCursor = document.querySelector(".cursor-follow-music");
-
         let lastX = 0;
         let lastY = 0;
 
         document.addEventListener("mousemove", (e) => {
 
-        const dx = e.clientX - lastX;
-        const dy = e.clientY - lastY;
+            const dx = e.clientX - lastX;
+            const dy = e.clientY - lastY;
+            const distance = Math.sqrt(dx * dx + dy * dy);
 
-        const distance = Math.sqrt(dx * dx + dy * dy);
+            if (distance > 10) {
 
-        // seuil minimum de mouvement pour créer une note
-        if(distance > 10){
+                const note = document.createElement("div");
+                note.classList.add("music-note");
 
-            const note = document.createElement("div");
-            note.classList.add("music-note");
+                const notes = ["♪","♫","♩","♬"];
+                note.textContent = notes[Math.floor(Math.random() * notes.length)];
 
-            const notes = ["♪","♫","♩","♬"];
-            note.textContent = notes[Math.floor(Math.random() * notes.length)];
+                note.style.left = e.clientX + "px";
+                note.style.top = e.clientY + "px";
 
-            note.style.left = e.clientX + "px";
-            note.style.top = e.clientY + "px";
+                document.body.appendChild(note);
 
-            document.body.appendChild(note);
+                setTimeout(() => note.remove(), 1000);
 
-            setTimeout(() => {
-            note.remove();
-            }, 1000);
-
-            lastX = e.clientX;
-            lastY = e.clientY;
-        }
-
+                lastX = e.clientX;
+                lastY = e.clientY;
+            }
         });
     }
 
