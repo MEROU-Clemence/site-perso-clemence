@@ -1,6 +1,11 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+    if (!isset($_POST["consentement"])) {
+        echo "Veuillez accepter l'utilisation de vos données.";
+        exit;
+    }
+
     $to = "clemence.merou@gmail.com";
     $subject = "Nouveau message depuis votre site";
 

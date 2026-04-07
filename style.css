@@ -1111,6 +1111,29 @@ textarea:focus {
     box-shadow: 0 0 5px var(--color-link);
     outline: none;
 }
+.checkbox-group {
+    display: flex;
+}
+.checkbox-label {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+.checkbox-label, .checkbox-label a, .checkbox-label div {
+    font-size: 14px;
+    line-height: 1.4;
+}
+.checkbox-label a:hover {
+    color: var(--color-link);
+    cursor: pointer;
+}
+.checkbox-label input {
+    cursor: pointer;
+    height: fit-content;
+    margin-right: 10px;
+    width: fit-content;
+}
 .social-medias.social-medias-header.social-medias-contact {
     gap: 14px;
     justify-content: center;
