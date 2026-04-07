@@ -533,39 +533,76 @@ document.addEventListener('DOMContentLoaded', function () {
     // ****** Pop up Cookies
     function popUpCookies() {
         const banner = document.getElementById("cookie-banner");
+        const acceptBtn = document.getElementById("accept-cookies");
+        const refuseBtn = document.getElementById("refuse-cookies");
+        const manageBtn = document.getElementById("manage-cookies");
 
         // Vérifie si choix déjà fait
-        if (localStorage.getItem("cookiesChoice")) {
+        const choice = localStorage.getItem("cookiesChoice");
+
+        if (choice) {
             banner.style.display = "none";
+
+            // 👉 Si déjà accepté → charger GA directement
+            if (choice === "accepted") {
+                loadGoogleAnalytics();
+            }
         }
 
-        document.getElementById("accept-cookies").addEventListener("click", function () {
-            localStorage.setItem("cookiesChoice", "accepted");
-            banner.style.display = "none";
+        if (acceptBtn) {
+            acceptBtn.addEventListener("click", function () {
+                localStorage.setItem("cookiesChoice", "accepted");
+                banner.style.display = "none";
+                loadGoogleAnalytics();
+                console.log("Cookies acceptés");
+            });
+        }
 
-            // 👉 Ici tu peux activer Google Analytics
-            console.log("Cookies acceptés");
-            // TODO: faire ça ici
-            // if (localStorage.getItem("cookiesChoice") === "accepted") {
-            //     // 👉 charger Google Analytics
-            // }
-        });
+        if (refuseBtn) {
+            refuseBtn.addEventListener("click", function () {
+                localStorage.setItem("cookiesChoice", "refused");
+                banner.style.display = "none";
 
-        document.getElementById("refuse-cookies").addEventListener("click", function () {
-            localStorage.setItem("cookiesChoice", "refused");
-            banner.style.display = "none";
-
-            console.log("Cookies refusés");
-        });
+                console.log("Cookies refusés");
+            });
+        }
 
         // Reste sur la page quand on click sur Gérer les cookies
-        document.getElementById("manage-cookies").addEventListener("click", function(e) {
-            e.preventDefault();
+        if (manageBtn) {
+            manageBtn.addEventListener("click", function(e) {
+                e.preventDefault();
+                localStorage.removeItem("cookiesChoice");
+                banner.style.display = "block";
+            });
+        }
+    }
 
-            localStorage.removeItem("cookiesChoice");
+    // ****** Google Analytics
+    function loadGoogleAnalytics() {
+        if (window.gaLoaded) return;
 
-            document.getElementById("cookie-banner").style.display = "block";
+        window.gaLoaded = true;
+
+        // 1. Charger le script Google
+        const script = document.createElement("script");
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-DKTR1QXTWH";
+        script.async = true;
+        document.head.appendChild(script);
+
+        // 2. Initialiser dataLayer + gtag
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        window.gtag = gtag;
+
+        // 3. Init
+        gtag("js", new Date());
+
+        // 4. Config GA
+        gtag("config", "G-DKTR1QXTWH", {
+            anonymize_ip: true
         });
+
+        console.log("Google Analytics chargé");
     }
 
     // ****** Initialisation des modules autres pages
