@@ -1183,28 +1183,40 @@ a {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Séparator */
+.text-separator {
+    background: linear-gradient(to right, transparent, black, transparent);
+    height: 1px;
+    margin: 40px auto;
+    width: 80px;
+}
+ .slider-track, .slider-content {
+    display: flex;
+    gap: 16px;
+}
+.slider-track {
+    animation: scroll-img-hands 12s linear infinite;
+    width: max-content;
+}
+.slider-content {
+    align-items: center;
+    flex-shrink: 0;
+}
+.section-banner-welcome {
+    display: flex;
+    height: 40px;
+}
+.items-welcome img {
+    width: 40px;
+}
+@keyframes scroll-img-hands {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
 
 /****** CONTACT ******/
 .section.form-and-social-medias .content-section, .section-form, .section-social-medias {
@@ -1709,10 +1721,13 @@ textarea:focus {
         letter-spacing: 1px;
     }
 
-
-
-
-
+    /* Séparator */
+    .section-banner-welcome {
+        height: 50px;
+    }
+    .items-welcome img {
+        width: 50px;
+    }
 
     /****** CONTACT ******/
     .section-form, .section-social-medias {
@@ -2070,12 +2085,13 @@ textarea:focus {
         width: 44%;
     }
 
-
-
-
-
-
-
+    /* Séparator */
+    .section-banner-welcome {
+        height: 62px;
+    }
+    .items-welcome img {
+        width: 62px;
+    }
 
     /****** CONTACT ******/
     .section.form-and-social-medias .content-section {
@@ -2258,5 +2274,13 @@ textarea:focus {
     }
     .little-grid-multi.bloc-multi {
         width: 40%;
+    }
+
+    /* Séparator */
+    .section-banner-welcome {
+        height: 70px;
+    }
+    .items-welcome img {
+        width: 70px;
     }
 }
