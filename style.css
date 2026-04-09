@@ -1187,35 +1187,20 @@ a {
 .text-separator {
     background: linear-gradient(to right, transparent, black, transparent);
     height: 1px;
-    margin: 40px auto;
+    margin: 30px auto;
     width: 80px;
 }
- .slider-track, .slider-content {
+.section-banner-welcome {
+    align-items: center;
+    display: flex;
+    padding-bottom: 28px;
+}
+.slider-track {
     display: flex;
     gap: 16px;
 }
-.slider-track {
-    animation: scroll-img-hands 12s linear infinite;
-    width: max-content;
-}
-.slider-content {
-    align-items: center;
-    flex-shrink: 0;
-}
-.section-banner-welcome {
-    display: flex;
-    height: 40px;
-}
 .items-welcome img {
     width: 40px;
-}
-@keyframes scroll-img-hands {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-50%);
-    }
 }
 
 /****** CONTACT ******/
@@ -1723,7 +1708,7 @@ textarea:focus {
 
     /* Séparator */
     .section-banner-welcome {
-        height: 50px;
+        padding-bottom: 35px;
     }
     .items-welcome img {
         width: 50px;
@@ -2087,7 +2072,7 @@ textarea:focus {
 
     /* Séparator */
     .section-banner-welcome {
-        height: 62px;
+        padding-bottom: 42px;
     }
     .items-welcome img {
         width: 62px;
@@ -2278,7 +2263,7 @@ textarea:focus {
 
     /* Séparator */
     .section-banner-welcome {
-        height: 70px;
+        padding-bottom: 48px;
     }
     .items-welcome img {
         width: 70px;

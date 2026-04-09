@@ -598,6 +598,33 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log("Google Analytics chargé");
     }
 
+    // ****** Mains infinies
+    function infiniteScroll() {
+        const track = document.getElementById("slider-track");
+
+        let position = 0;
+        const speed = 0.5;
+
+        function animate() {
+            position -= speed;
+
+            track.style.transform = `translateX(${position}px)`;
+
+            const firstItem = track.firstElementChild;
+            const firstItemWidth = firstItem.offsetWidth + 16;
+
+            // quand le premier élément est complètement sorti
+            if (Math.abs(position) >= firstItemWidth) {
+                track.appendChild(firstItem);
+                position += firstItemWidth;
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    }
+
     // ****** Initialisation des modules autres pages
     if ($('body').hasClass('page-music')) {
         cursorMusic();
@@ -613,6 +640,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if ($('body').hasClass('page-multi')) {
         cursorMulti();
+        infiniteScroll();
     }
     if ($('body').hasClass('page-home')) {
         cursorHome();
