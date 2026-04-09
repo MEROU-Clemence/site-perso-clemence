@@ -1486,7 +1486,7 @@ textarea:focus {
     /****** MAIN ******/
     /* Img + title */
     .section-presentation, .section-presentation .opacity-2, .section-presentation .opacity-3 {
-        height: 75dvh;
+        height: 77dvh;
     }
     .presentation-padding {
         padding: 50px 30px;
