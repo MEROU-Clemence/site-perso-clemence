@@ -21,7 +21,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $messageBody .= "Téléphone : $telephone\n\n";
     $messageBody .= "Message :\n$message";
 
-    $headers = "From: $email";
+    $headers  = "From: clemence.merou@gmail.com\r\n";
+    $headers .= "Reply-To: $email\r\n";
+    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
 
     if (mail($to, $subject, $messageBody, $headers)) {
         echo "Votre message a bien été envoyé !";
