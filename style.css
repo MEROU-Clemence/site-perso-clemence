@@ -529,7 +529,6 @@ a {
 }
 .section-presentation.section-presentation-home {
     background-attachment: fixed !important;
-    width: 100%;
 }
 .section-presentation.section-presentation-home, .section-presentation.section-presentation-home .opacity {
     height: 100dvh;
