@@ -524,14 +524,15 @@ a {
 /****** MAIN ******/
 /* Img + title */
 .section-presentation, .section-presentation .opacity-2, .section-presentation .opacity-3 {
-    height: 60dvh;
+    height: 60vh;
     width: 100%;
 }
 .section-presentation.section-presentation-home {
     background-attachment: fixed !important;
+    width: 100%;
 }
 .section-presentation.section-presentation-home, .section-presentation.section-presentation-home .opacity {
-    height: 100dvh;
+    height: 100vh;
 }
 .section-presentation.section-presentation-multi, .section-presentation.section-presentation-athlete {
     background-position: top;
@@ -1486,7 +1487,7 @@ textarea:focus {
     /****** MAIN ******/
     /* Img + title */
     .section-presentation, .section-presentation .opacity-2, .section-presentation .opacity-3 {
-        height: 77dvh;
+        height: 77vh;
     }
     .presentation-padding {
         padding: 50px 30px;
