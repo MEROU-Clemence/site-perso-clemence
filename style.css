@@ -531,6 +531,12 @@ a {
     background-attachment: fixed !important;
     width: 100%;
 }
+/* iPad / iOS fix */
+@supports (-webkit-touch-callout: none) {
+    .section-presentation.section-presentation-home {
+        background-attachment: scroll !important;
+    }
+}
 .section-presentation.section-presentation-home, .section-presentation.section-presentation-home .opacity {
     height: 100vh;
 }
