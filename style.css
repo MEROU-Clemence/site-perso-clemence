@@ -524,7 +524,7 @@ a {
 /****** MAIN ******/
 /* Img + title */
 .section-presentation, .section-presentation .opacity-2, .section-presentation .opacity-3, .presentation-padding {
-    height: 60vh;
+    height: 60dvh;
     width: 100%;
 }
 .section-presentation.section-presentation-home {
@@ -560,7 +560,7 @@ a {
 }
 .section-presentation.section-presentation-home, .section-presentation.section-presentation-home .opacity, .section-presentation.section-presentation-home .presentation-padding {
     height: auto;
-    min-height: 100vh;
+    min-height: 100dvh;
 }
 .section-presentation.section-presentation-multi, .section-presentation.section-presentation-athlete {
     background-position: top;
@@ -1520,7 +1520,7 @@ textarea:focus {
     /****** MAIN ******/
     /* Img + title */
     .section-presentation, .section-presentation .opacity-2, .section-presentation .opacity-3, .presentation-padding {
-        height: 77vh;
+        height: 77dvh;
     }
     .presentation-padding {
         padding: 50px 30px;
