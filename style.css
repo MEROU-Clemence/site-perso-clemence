@@ -966,6 +966,11 @@ a {
     text-decoration: underline;
 }
 
+/* Section partenaires */
+.section-partners .partners {
+    text-align: center;
+}
+
 /****** TECH ******/
 /* Prestations */
 .cards-prestations {
