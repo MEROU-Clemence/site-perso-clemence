@@ -523,15 +523,44 @@ a {
 
 /****** MAIN ******/
 /* Img + title */
-.section-presentation, .section-presentation .opacity-2, .section-presentation .opacity-3 {
-    height: 60dvh;
+.section-presentation, .section-presentation .opacity-2, .section-presentation .opacity-3, .presentation-padding {
+    height: 60vh;
     width: 100%;
 }
 .section-presentation.section-presentation-home {
-    background-attachment: fixed !important;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
 }
-.section-presentation.section-presentation-home, .section-presentation.section-presentation-home .opacity {
-    height: 100dvh;
+.section-presentation.section-presentation-home .parallax-bg {
+    position: absolute;
+    height: inherit;
+    left: 0;
+    top: 0;
+    width: 100%;
+    clip-path: inset(0 0 0 0);
+}
+.section-presentation.section-presentation-home .parallax-bg::before {
+    background: inherit;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+}
+@supports (-webkit-touch-callout: none) {
+    .section-presentation.section-presentation-home .parallax-bg::before {
+        position: absolute;
+    }
+}
+.section-presentation.section-presentation-home .opacity {
+    position: relative;
+}
+.section-presentation.section-presentation-home, .section-presentation.section-presentation-home .opacity, .section-presentation.section-presentation-home .presentation-padding {
+    height: auto;
+    min-height: 100vh;
 }
 .section-presentation.section-presentation-multi, .section-presentation.section-presentation-athlete {
     background-position: top;
@@ -544,7 +573,6 @@ a {
 .presentation-padding {
     align-items: end;
     display: flex;
-    height: 100%;
     padding: 20px;
 }
 .section-presentation-home .presentation-padding {
@@ -654,6 +682,7 @@ a {
     align-items: center;
     display: flex;
     justify-content: center;
+    position: relative;
     width: 100%;
 }
 .section-bloc-sub-sub-title .content-section {
@@ -1490,8 +1519,8 @@ textarea:focus {
 
     /****** MAIN ******/
     /* Img + title */
-    .section-presentation, .section-presentation .opacity-2, .section-presentation .opacity-3 {
-        height: 77dvh;
+    .section-presentation, .section-presentation .opacity-2, .section-presentation .opacity-3, .presentation-padding {
+        height: 77vh;
     }
     .presentation-padding {
         padding: 50px 30px;
