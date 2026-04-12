@@ -1,40 +1,37 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    echo "ERROR: invalid request";
-    exit;
-}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-if (!isset($_POST["consentement"])) {
-    echo "ERROR: consentement requis";
-    exit;
-}
+    if (!isset($_POST["consentement"])) {
+        echo "Veuillez accepter l'utilisation de vos données.";
+        exit;
+    }
 
-$to = "clemence.merou@gmail.com";
+    $to = "clemence.merou@gmail.com";
+    $subject = "Nouveau message depuis votre site";
 
-$nom = htmlspecialchars($_POST["nom"] ?? '');
-$prenom = htmlspecialchars($_POST["prenom"] ?? '');
-$email = htmlspecialchars($_POST["email"] ?? '');
-$telephone = htmlspecialchars($_POST["telephone"] ?? '');
-$message = htmlspecialchars($_POST["message"] ?? '');
+    $nom = htmlspecialchars($_POST["nom"]);
+    $prenom = htmlspecialchars($_POST["prenom"]);
+    $email = htmlspecialchars($_POST["email"]);
+    $telephone = htmlspecialchars($_POST["telephone"]);
+    $message = htmlspecialchars($_POST["message"]);
 
-$subject = "Nouveau message depuis votre site";
+    $messageBody = "Nom : $nom\n";
+    $messageBody .= "Prénom : $prenom\n";
+    $messageBody .= "Email : $email\n";
+    $messageBody .= "Téléphone : $telephone\n\n";
+    $messageBody .= "Message :\n$message";
 
-$body  = "Nom : $nom\n";
-$body .= "Prénom : $prenom\n";
-$body .= "Email : $email\n";
-$body .= "Téléphone : $telephone\n\n";
-$body .= "Message :\n$message";
+    $headers  = "From: clemence.merou@gmail.com\r\n";
+    $headers .= "Reply-To: $email\r\n";
+    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
 
-$headers  = "From: contact@clemence-merou.com\r\n";
-$headers .= "Reply-To: $email\r\n";
-$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-$headers .= "MIME-Version: 1.0\r\n";
-$headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
-
-$ok = mail($to, $subject, $body, $headers);
-
-if ($ok) {
-    echo "SUCCESS: Votre message a bien été envoyé !";
+    if (mail($to, $subject, $messageBody, $headers)) {
+        echo "Votre message a bien été envoyé !";
+    } else {
+        echo "Une erreur est survenue lors de l'envoi.";
+    }
 } else {
-    echo "ERROR: Une erreur est survenue lors de l'envoi.";
+    echo "Erreur : accès invalide.";
 }
