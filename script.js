@@ -504,7 +504,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
 
-
         // FERMETURE MODALE
         document.querySelector('.close').onclick = function() {
             document.getElementById("myModal").style.display = "none";
