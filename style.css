@@ -1232,6 +1232,7 @@ a {
 .section-banner-welcome {
     align-items: center;
     display: flex;
+    overflow: hidden;
     padding-bottom: 28px;
 }
 .slider-track {
