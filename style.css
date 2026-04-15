@@ -19,12 +19,15 @@
 * {
     box-sizing: border-box;
     color: var(--color-text);
-    margin: 0px;
-    padding: 0px;
+    font-family: var(--font-text);
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
-    font-family: var(--font-text);
+    margin: 0px;
+    padding: 0px;
+}
+.paragraph-txt, .pres-txt, .txt-intro-section, .txt-multi-section, .paragraph-infos-mentions-and-co {
+    text-align: justify;
 }
 body {
     background-color: var(--color-bg-1);
