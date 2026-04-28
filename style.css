@@ -1166,6 +1166,15 @@ a {
     width: 100%;
 }
 
+/* Médias */
+.section-distinctions.section-medias .distinctions-grid .card-presta {
+    max-width: fit-content;
+}
+.section-distinctions.section-medias .distinctions-grid img {
+    max-height: 200px;
+    object-fit: contain;
+}
+
 /****** MULTIPASSIONS ******/
 /* Visuels */
 .grid-multi {
